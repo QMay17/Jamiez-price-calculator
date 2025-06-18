@@ -8,6 +8,7 @@ const taskData = {
             timeHours: 1.5,
             cost: '$50–$100',
             costAmount: 75,
+            frequency: 'weekly',
             difficulty: 'medium',
             tooltip: 'Regular lawn care including irrigation system maintenance and sprinkler head adjustments'
         },
@@ -18,6 +19,7 @@ const taskData = {
             timeHours: 1.5,
             cost: '$50–$80',
             costAmount: 65,
+            frequency: 'biweekly',
             difficulty: 'easy',
             tooltip: 'Pruning, weeding, and seasonal care for decorative landscaping elements'
         },
@@ -28,6 +30,7 @@ const taskData = {
             timeHours: 3,
             cost: '$150–$300',
             costAmount: 225,
+            frequency: 'seasonal',
             difficulty: 'hard',
             tooltip: 'Professional tree care including pruning, health assessment, and seasonal maintenance'
         },
@@ -38,6 +41,7 @@ const taskData = {
             timeHours: 1.5,
             cost: '$60–$100',
             costAmount: 80,
+            frequency: 'monthly',
             difficulty: 'medium',
             tooltip: 'Installation, repair, and maintenance of landscape lighting systems'
         },
@@ -48,6 +52,7 @@ const taskData = {
             timeHours: 0.75,
             cost: '$50–$75',
             costAmount: 62.5,
+            frequency: 'quarterly',
             difficulty: 'easy',
             tooltip: 'Mailbox condition assessment, lock maintenance, and security upgrades'
         },
@@ -58,6 +63,7 @@ const taskData = {
             timeHours: 0.5,
             cost: '$40–$60',
             costAmount: 50,
+            frequency: 'quarterly',
             difficulty: 'easy',
             tooltip: 'Ensuring address numbers are clearly visible and properly illuminated'
         },
@@ -68,6 +74,7 @@ const taskData = {
             timeHours: 1.5,
             cost: '$80–$150',
             costAmount: 115,
+            frequency: 'monthly',
             difficulty: 'medium',
             tooltip: 'Water feature cleaning, pump maintenance, and seasonal care'
         },
@@ -78,6 +85,7 @@ const taskData = {
             timeHours: 1,
             cost: '$75–$120',
             costAmount: 97.5,
+            frequency: 'quarterly',
             difficulty: 'medium',
             tooltip: 'Installation, programming, and maintenance of smart irrigation controllers'
         }
@@ -90,6 +98,7 @@ const taskData = {
             timeHours: 0.75,
             cost: '$60–$100',
             costAmount: 80,
+            frequency: 'monthly',
             difficulty: 'medium',
             tooltip: 'Gate hardware adjustment, hinge lubrication, and repair services'
         },
@@ -100,6 +109,7 @@ const taskData = {
             timeHours: 0.5,
             cost: '$40–$60',
             costAmount: 50,
+            frequency: 'weekly',
             difficulty: 'easy',
             tooltip: 'Cleanup and organization of trash and recycling storage areas'
         },
@@ -110,6 +120,7 @@ const taskData = {
             timeHours: 0.75,
             cost: '$75–$125',
             costAmount: 100,
+            frequency: 'quarterly',
             difficulty: 'medium',
             tooltip: 'Hose bib replacement, repair, and winterization services'
         },
@@ -120,6 +131,7 @@ const taskData = {
             timeHours: 1,
             cost: '$60–$100',
             costAmount: 80,
+            frequency: 'seasonal',
             difficulty: 'medium',
             tooltip: 'AC condenser unit cleaning, accessibility checks, and basic maintenance'
         },
@@ -130,6 +142,7 @@ const taskData = {
             timeHours: 0.5,
             cost: 'N/A',
             costAmount: 0,
+            frequency: 'quarterly',
             difficulty: 'easy',
             tooltip: 'Ensuring utility meters are accessible and protected (coordination with utility companies)'
         }
@@ -142,6 +155,7 @@ const taskData = {
             timeHours: 1.5,
             cost: '$75–$200',
             costAmount: 137.5,
+            frequency: 'monthly',
             difficulty: 'medium',
             tooltip: 'Fence damage repair, gate latch adjustment, and structural assessment'
         },
@@ -152,6 +166,7 @@ const taskData = {
             timeHours: 2.5,
             cost: '$100–$300',
             costAmount: 200,
+            frequency: 'monthly',
             difficulty: 'medium',
             tooltip: 'Deck cleaning, inspection for damage, and maintenance recommendations'
         },
@@ -162,6 +177,7 @@ const taskData = {
             timeHours: 1.5,
             cost: '$150–$500',
             costAmount: 325,
+            frequency: 'quarterly',
             difficulty: 'hard',
             tooltip: 'Patio cover cleaning, structural inspection, and weather protection maintenance'
         },
@@ -172,6 +188,7 @@ const taskData = {
             timeHours: 1,
             cost: '$75–$150',
             costAmount: 112.5,
+            frequency: 'monthly',
             difficulty: 'medium',
             tooltip: 'BBQ cleaning, outdoor kitchen maintenance, and gas line inspection'
         },
@@ -182,6 +199,7 @@ const taskData = {
             timeHours: 0.75,
             cost: '$50–$100',
             costAmount: 75,
+            frequency: 'seasonal',
             difficulty: 'medium',
             tooltip: 'Misting system cleaning, fan maintenance, and seasonal setup'
         },
@@ -192,6 +210,7 @@ const taskData = {
             timeHours: 0.75,
             cost: '$75–$150',
             costAmount: 112.5,
+            frequency: 'seasonal',
             difficulty: 'medium',
             tooltip: 'Fire pit cleaning, safety inspection, and fuel management'
         },
@@ -202,6 +221,7 @@ const taskData = {
             timeHours: 0.75,
             cost: '$75–$125',
             costAmount: 100,
+            frequency: 'seasonal',
             difficulty: 'medium',
             tooltip: 'Outdoor heater cleaning, gas line inspection, and safety maintenance'
         },
@@ -212,6 +232,7 @@ const taskData = {
             timeHours: 1.5,
             cost: '$200–$500+',
             costAmount: 350,
+            frequency: 'quarterly',
             difficulty: 'hard',
             tooltip: 'Drainage system evaluation and solutions for water pooling problems'
         },
@@ -222,6 +243,7 @@ const taskData = {
             timeHours: 1,
             cost: '$50–$150',
             costAmount: 100,
+            frequency: 'biweekly',
             difficulty: 'easy',
             tooltip: 'Pet area cleanup, damage assessment, and maintenance solutions'
         },
@@ -232,6 +254,7 @@ const taskData = {
             timeHours: 1.5,
             cost: '$80–$200',
             costAmount: 140,
+            frequency: 'seasonal',
             difficulty: 'medium',
             tooltip: 'Fruit tree pruning, harvest coordination, and garden maintenance'
         },
@@ -242,6 +265,7 @@ const taskData = {
             timeHours: 0.75,
             cost: '$100–$250',
             costAmount: 175,
+            frequency: 'quarterly',
             difficulty: 'medium',
             tooltip: 'Water barrel maintenance and greywater system management'
         }
@@ -254,6 +278,7 @@ const taskData = {
             timeHours: 1.5,
             cost: '$50–$100',
             costAmount: 75,
+            frequency: 'monthly',
             difficulty: 'easy',
             tooltip: 'Cleaning and maintenance of patio furniture and cushions'
         },
@@ -264,6 +289,7 @@ const taskData = {
             timeHours: 0.5,
             cost: '$40–$80',
             costAmount: 60,
+            frequency: 'monthly',
             difficulty: 'easy',
             tooltip: 'Umbrella cleaning, repair, and shade structure maintenance'
         },
@@ -274,6 +300,7 @@ const taskData = {
             timeHours: 0.75,
             cost: '$50–$100',
             costAmount: 75,
+            frequency: 'monthly',
             difficulty: 'easy',
             tooltip: 'Storage shed organization, weatherproofing, and maintenance'
         },
@@ -284,6 +311,7 @@ const taskData = {
             timeHours: 1.5,
             cost: '$100–$250',
             costAmount: 175,
+            frequency: 'monthly',
             difficulty: 'medium',
             tooltip: 'Swing set inspection, toy organization, and safety maintenance'
         },
@@ -294,6 +322,7 @@ const taskData = {
             timeHours: 1.5,
             cost: '$150–$250/month',
             costAmount: 200,
+            frequency: 'weekly',
             difficulty: 'hard',
             tooltip: 'Regular pool/hot tub cleaning, chemical balancing, and equipment maintenance'
         },
@@ -304,6 +333,7 @@ const taskData = {
             timeHours: 0.75,
             cost: '$150–$300',
             costAmount: 225,
+            frequency: 'monthly',
             difficulty: 'medium',
             tooltip: 'Pool safety fence inspection, alarm testing, and compliance checks'
         }
@@ -316,6 +346,7 @@ const taskData = {
             timeHours: 1.5,
             cost: '$100–$250',
             costAmount: 175,
+            frequency: 'quarterly',
             difficulty: 'medium',
             tooltip: 'Overhead storage rack installation and garage organization systems'
         },
@@ -326,6 +357,7 @@ const taskData = {
             timeHours: 1.5,
             cost: '$75–$150',
             costAmount: 112.5,
+            frequency: 'quarterly',
             difficulty: 'hard',
             tooltip: 'Electrical outlet testing, lighting installation, and electrical safety checks'
         },
@@ -336,6 +368,7 @@ const taskData = {
             timeHours: 1.5,
             cost: '$300–$800',
             costAmount: 550,
+            frequency: 'quarterly',
             difficulty: 'hard',
             tooltip: 'EV charger installation prep, electrical assessment, and permit coordination'
         },
@@ -346,6 +379,7 @@ const taskData = {
             timeHours: 1.5,
             cost: '$50–$150',
             costAmount: 100,
+            frequency: 'monthly',
             difficulty: 'easy',
             tooltip: 'Tool organization systems and equipment storage optimization'
         },
@@ -356,6 +390,7 @@ const taskData = {
             timeHours: 1,
             cost: '$100–$200',
             costAmount: 150,
+            frequency: 'monthly',
             difficulty: 'medium',
             tooltip: 'Garage-based laundry appliance maintenance and utility connections'
         },
@@ -366,6 +401,7 @@ const taskData = {
             timeHours: 0.5,
             cost: '$100–$150',
             costAmount: 125,
+            frequency: 'monthly',
             difficulty: 'easy',
             tooltip: 'Pest activity assessment and preventive control measures'
         }
@@ -378,6 +414,7 @@ const taskData = {
             timeHours: 1,
             cost: '$150–$300',
             costAmount: 225,
+            frequency: 'seasonal',
             difficulty: 'hard',
             tooltip: 'Professional roof inspection for age, material condition, and visible damage'
         },
@@ -388,6 +425,7 @@ const taskData = {
             timeHours: 1.75,
             cost: '$60–$120',
             costAmount: 90,
+            frequency: 'seasonal',
             difficulty: 'medium',
             tooltip: 'Gutter cleaning, debris removal, and downspout flow testing'
         },
@@ -398,6 +436,7 @@ const taskData = {
             timeHours: 1.5,
             cost: '$200–$500',
             costAmount: 350,
+            frequency: 'quarterly',
             difficulty: 'medium',
             tooltip: 'Siding inspection, stucco assessment, and paint condition evaluation'
         },
@@ -408,6 +447,7 @@ const taskData = {
             timeHours: 0.75,
             cost: '$150–$300',
             costAmount: 225,
+            frequency: 'seasonal',
             difficulty: 'hard',
             tooltip: 'Chimney inspection, flue cleaning coordination, and safety assessment'
         },
@@ -418,6 +458,7 @@ const taskData = {
             timeHours: 1.5,
             cost: '$80–$150',
             costAmount: 115,
+            frequency: 'quarterly',
             difficulty: 'easy',
             tooltip: 'Window cleaning, screen repair, and weatherstripping maintenance'
         },
@@ -428,6 +469,7 @@ const taskData = {
             timeHours: 0.75,
             cost: '$100–$200',
             costAmount: 150,
+            frequency: 'quarterly',
             difficulty: 'medium',
             tooltip: 'Skylight cleaning, seal inspection, and solar tube maintenance'
         },
@@ -438,6 +480,7 @@ const taskData = {
             timeHours: 0.5,
             cost: '$150–$300',
             costAmount: 225,
+            frequency: 'quarterly',
             difficulty: 'medium',
             tooltip: 'Solar panel visual inspection, cleaning coordination, and performance monitoring'
         },
@@ -447,6 +490,7 @@ const taskData = {
             time: '1–2 hours',
             timeHours: 1.5,
             cost: '$100–$250',
+            frequency: 'monthly',
             costAmount: 175,
             difficulty: 'medium',
             tooltip: 'Security camera cleaning, motion light testing, and system maintenance'
@@ -458,6 +502,7 @@ const taskData = {
             timeHours: 0.75,
             cost: '$100–$300',
             costAmount: 200,
+            frequency: 'monthly',
             difficulty: 'medium',
             tooltip: 'Wi-Fi signal optimization, mesh extender setup, and network troubleshooting'
         }
@@ -470,6 +515,7 @@ const taskData = {
             timeHours: 1,
             cost: '$100–$200',
             costAmount: 150,
+            frequency: 'monthly',
             difficulty: 'medium',
             tooltip: 'Water filter replacement, softener maintenance, and system testing'
         },
@@ -480,6 +526,7 @@ const taskData = {
             timeHours: 0.5,
             cost: '$50–$100',
             costAmount: 75,
+            frequency: 'monthly',
             difficulty: 'easy',
             tooltip: 'Propane tank exchange, connection inspection, and safety checks'
         },
@@ -490,6 +537,7 @@ const taskData = {
             timeHours: 1,
             cost: '$75–$150',
             costAmount: 112.5,
+            frequency: 'seasonal',
             difficulty: 'easy',
             tooltip: 'Firewood stacking, storage organization, and pest prevention'
         },
@@ -500,6 +548,7 @@ const taskData = {
             timeHours: 1,
             cost: '$150–$300',
             costAmount: 225,
+            frequency: 'seasonal',
             difficulty: 'hard',
             tooltip: 'Generator maintenance, fuel management, and operational testing'
         },
@@ -510,6 +559,7 @@ const taskData = {
             timeHours: 0.75,
             cost: '$100–$200',
             costAmount: 150,
+            frequency: 'quarterly',
             difficulty: 'medium',
             tooltip: 'Rainwater barrel cleaning, system maintenance, and mosquito prevention'
         },
@@ -520,6 +570,7 @@ const taskData = {
             timeHours: 0.5,
             cost: '$200–$500',
             costAmount: 350,
+            frequency: 'seasonal',
             difficulty: 'hard',
             tooltip: 'Septic system inspection coordination and sewer line maintenance'
         },
@@ -530,6 +581,7 @@ const taskData = {
             timeHours: 1,
             cost: '$75–$150',
             costAmount: 112.5,
+            frequency: 'quarterly',
             difficulty: 'medium',
             tooltip: 'Irrigation timer programming, seasonal adjustments, and system optimization'
         }
@@ -538,30 +590,33 @@ const taskData = {
         {
             id: 'dog-walking',
             name: 'Dog Walking & Exercise',
-            time: '1-2 hours',
-            timeHours: 1.5,
+            time: '0.5-1 hours',
+            timeHours: 0.75,
             cost: '$25-$50',
             costAmount: 37.5,
+            frequency: 'weekly',
             difficulty: 'easy',
             tooltip: 'Regular dog walking service with exercise and socialization'
         },
         {
             id: 'pet-grooming',
             name: 'Pet Grooming & Care',
-            time: '2-4 hours',
-            timeHours: 3,
-            cost: '$80-$200',
-            costAmount: 140,
+            time: '1-3 hours',
+            timeHours: 2,
+            cost: '$50-$100',
+            costAmount: 75,
+            frequency: 'monthly',
             difficulty: 'medium',
             tooltip: 'Professional pet grooming coordination and basic care services'
         },
         {
             id: 'pet-sitting',
             name: 'Pet Sitting & Care',
-            time: '4-8 hours',
-            timeHours: 6,
-            cost: '$100-$250',
-            costAmount: 175,
+            time: '0.5-1 hours',
+            timeHours: 0.75,
+            cost: '$25-$50',
+            costAmount: 37.5,
+            frequency: 'weekly',
             difficulty: 'medium',
             tooltip: 'In-home pet care while you are away, including feeding and companionship'
         },
@@ -572,6 +627,7 @@ const taskData = {
             timeHours: 2,
             cost: '$40-$100',
             costAmount: 70,
+            frequency: 'monthly',
             difficulty: 'easy',
             tooltip: 'Safe pet transportation to appointments, grooming, and activities'
         }
@@ -584,6 +640,7 @@ const taskData = {
             timeHours: 1.5,
             cost: '$150-$300',
             costAmount: 225,
+            frequency: 'monthly',
             difficulty: 'medium',
             tooltip: 'Locate signs of infestation, clean affected areas, and set traps or deterrents to prevent recurrence.'
         },
@@ -594,6 +651,7 @@ const taskData = {
             timeHours: 0.75,
             cost: '$75-$150',
             costAmount: 125,
+            frequency: 'biweekly',
             difficulty: 'medium',
             tooltip: 'Remove webs and nests from corners, eaves, and fixtures to maintain a clean and pest-free space.'
         },
@@ -604,6 +662,7 @@ const taskData = {
             timeHours: 2,
             cost: '$200-$500',
             costAmount: 350,
+            frequency: 'biweekly',
             difficulty: 'hard',
             tooltip: 'Inspect for entry points and signs of activity; block access or arrange for humane wildlife removal.'
         }
@@ -625,8 +684,10 @@ const bundles = {
         'dog-walking', 'pet-grooming', 'pet-sitting', 'pet-transport', 'pet-area'
     ],
     'seasonal-prep': [
-        'outdoor-furniture-clean', 'misters-fans', 
-        'outdoor-heaters', 'firewood-storage'
+        'trees-pruning', 'ac-condenser', 'misters-fans',
+        'fruit-trees',  'roof-inspection', 'gutters-downspouts', 
+        'chimney-flue', 'backup-generator', 'septic-sewer',
+        'fire-pit',  'outdoor-heaters',  'firewood-storage'
     ]
 };
 
@@ -675,7 +736,10 @@ const serviceBundles = {
         name: 'Seasons Greetings Bundle',
         monthlyPrice: 100,
         annualPrice: 1200,
-        tasks: ['outdoor-furniture-clean', 'misters-fans', 'outdoor-heaters', 'firewood-storage'],
+        tasks: ['trees-pruning', 'ac-condenser', 'misters-fans',
+        'fruit-trees',  'roof-inspection', 'gutters-downspouts', 
+        'chimney-flue', 'backup-generator', 'septic-sewer',
+        'fire-pit',  'outdoor-heaters',  'firewood-storage'],
         maxTasks: 4
     }
 };
@@ -691,6 +755,111 @@ document.addEventListener('DOMContentLoaded', function() {
     setupEventListeners();
     populateTaskCategories();
     updateSummary();
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const mechanicYes = document.getElementById('mechanic_yes');
+        const mechanicNo = document.getElementById('mechanic_no');
+        const mechanicDetails = document.getElementById('mechanic_details');
+
+        function toggleMechanicDetails() {
+            if (mechanicYes.checked) {
+                mechanicDetails.classList.add('active');
+            } else {
+                mechanicDetails.classList.remove('active');
+            }
+        }
+
+        mechanicYes.addEventListener('change', toggleMechanicDetails);
+        mechanicNo.addEventListener('change', toggleMechanicDetails);
+
+        // Form validation
+        const form = document.getElementById('vehicleSurvey');
+        const requiredFields = ['make', 'model', 'year', 'mileage'];
+
+        function validateField(fieldName) {
+            const field = document.getElementById(fieldName);
+            const errorMessage = field.nextElementSibling;
+            
+            if (!field.value.trim()) {
+                field.classList.add('error');
+                errorMessage.classList.add('show');
+                return false;
+            } else {
+                field.classList.remove('error');
+                errorMessage.classList.remove('show');
+                return true;
+            }
+        }
+
+        // Real-time validation
+        requiredFields.forEach(fieldName => {
+            const field = document.getElementById(fieldName);
+            field.addEventListener('blur', () => validateField(fieldName));
+            field.addEventListener('input', () => {
+                if (field.value.trim()) {
+                    field.classList.remove('error');
+                    field.nextElementSibling.classList.remove('show');
+                }
+            });
+        });
+
+        // Form submission
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            let isValid = true;
+            requiredFields.forEach(fieldName => {
+                if (!validateField(fieldName)) {
+                    isValid = false;
+                }
+            });
+
+            if (isValid) {
+                // Collect form data
+                const formData = new FormData(form);
+                const surveyData = Object.fromEntries(formData);
+                
+                // Show success message
+                const submitBtn = document.querySelector('.submit-btn');
+                const originalText = submitBtn.innerHTML;
+                submitBtn.innerHTML = '<i class="fas fa-check"></i> Survey Submitted!';
+                submitBtn.style.background = '#28a745';
+                submitBtn.disabled = true;
+
+                // Log the data (in real app, send to server)
+                console.log('Survey Data:', surveyData);
+                
+                // Reset after 3 seconds (for demo)
+                setTimeout(() => {
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.style.background = '';
+                    submitBtn.disabled = false;
+                    alert('Thank you for completing the vehicle survey! Your responses have been recorded.');
+                }, 3000);
+            } else {
+                // Scroll to first error
+                const firstError = document.querySelector('.text-input.error, .number-input.error');
+                if (firstError) {
+                    firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    firstError.focus();
+                }
+            }
+        });
+
+        // Year field validation
+        const yearField = document.getElementById('year');
+        yearField.addEventListener('input', function() {
+            const currentYear = new Date().getFullYear();
+            if (this.value && (this.value < 1990 || this.value > currentYear + 1)) {
+                this.classList.add('error');
+                this.nextElementSibling.textContent = `Please enter a year between 1990 and ${currentYear + 1}`;
+                this.nextElementSibling.classList.add('show');
+            } else if (this.value) {
+                this.classList.remove('error');
+                this.nextElementSibling.classList.remove('show');
+            }
+        });
+    });
 });
 
 function initializeCalculator() {
@@ -704,6 +873,11 @@ function initializeCalculator() {
 function setupEventListeners() {
     // Get to Know You Better form listeners 
     setupKnowYouListeners();
+    setupCategoryToggles();
+
+    // Automobile section listeners
+    setupAutomobileListeners();
+    setupAutomobileToggle();
 
     // Bundle button functionality
     document.querySelectorAll('.bundle-btn').forEach(btn => {
@@ -774,13 +948,174 @@ function setupKnowYouListeners() {
     });
 }
 
+function setupAutomobileListeners() {
+    // Handle conditional content display for mechanic details
+    const mechanicYes = document.getElementById('mechanic_yes');
+    const mechanicNo = document.getElementById('mechanic_no');
+    const mechanicDetails = document.getElementById('mechanic_details');
+
+    function toggleMechanicDetails() {
+        if (mechanicYes && mechanicYes.checked) {
+            mechanicDetails.classList.add('active');
+        } else {
+            mechanicDetails.classList.remove('active');
+        }
+    }
+
+    if (mechanicYes) mechanicYes.addEventListener('change', toggleMechanicDetails);
+    if (mechanicNo) mechanicNo.addEventListener('change', toggleMechanicDetails);
+
+    // Form validation for automobile inputs
+    const requiredFields = ['make', 'model', 'year', 'mileage'];
+
+    function validateField(fieldName) {
+        const field = document.getElementById(fieldName);
+        if (!field) return true;
+        
+        const errorMessage = field.nextElementSibling;
+        
+        if (!field.value.trim()) {
+            field.classList.add('error');
+            if (errorMessage) errorMessage.classList.add('show');
+            return false;
+        } else {
+            field.classList.remove('error');
+            if (errorMessage) errorMessage.classList.remove('show');
+            return true;
+        }
+    }
+
+    // Real-time validation
+    requiredFields.forEach(fieldName => {
+        const field = document.getElementById(fieldName);
+        if (field) {
+            field.addEventListener('blur', () => validateField(fieldName));
+            field.addEventListener('input', () => {
+                if (field.value.trim()) {
+                    field.classList.remove('error');
+                    const errorMessage = field.nextElementSibling;
+                    if (errorMessage) errorMessage.classList.remove('show');
+                }
+            });
+        }
+    });
+
+    // Year field specific validation
+    const yearField = document.getElementById('year');
+    if (yearField) {
+        yearField.addEventListener('input', function() {
+            const currentYear = new Date().getFullYear();
+            if (this.value && (this.value < 1990 || this.value > currentYear + 1)) {
+                this.classList.add('error');
+                this.nextElementSibling.textContent = `Please enter a year between 1990 and ${currentYear + 1}`;
+                this.nextElementSibling.classList.add('show');
+            } else if (this.value) {
+                this.classList.remove('error');
+                this.nextElementSibling.classList.remove('show');
+            }
+        });
+    }
+}
+
+function setupAutomobileToggle() {
+    const automobileHeader = document.getElementById('automobile-header');
+    const automobileToggle = document.getElementById('automobile-toggle');
+    const automobileContent = document.getElementById('automobile-content');
+    const automobileSection = document.querySelector('.automobile-section');
+
+    function toggleAutomobileSection() {
+        const isActive = automobileContent.classList.contains('active');
+        
+        if (isActive) {
+            // Hide the section
+            automobileContent.classList.remove('active');
+            automobileToggle.classList.remove('active');
+            automobileSection.classList.remove('expanded');
+        } else {
+            // Show the section
+            automobileContent.classList.add('active');
+            automobileToggle.classList.add('active');
+            automobileSection.classList.add('expanded');
+        }
+    }
+
+    // Add click listeners to both header and toggle
+    if (automobileHeader) {
+        automobileHeader.addEventListener('click', toggleAutomobileSection);
+    }
+    
+    if (automobileToggle) {
+        automobileToggle.addEventListener('click', function(e) {
+            e.stopPropagation(); // Prevent double-clicking when clicking the toggle directly
+            toggleAutomobileSection();
+        });
+    }
+}
+
+function setupCategoryToggles() {
+    document.querySelectorAll('.category-header').forEach(header => {
+        header.addEventListener('click', function() {
+            const category = this.getAttribute('data-category');
+            const tasksContainer = document.getElementById(`${category}-tasks`);
+            const toggle = this.querySelector('.category-toggle');
+            if (tasksContainer && toggle) {
+                const isActive = tasksContainer.classList.contains('active');
+                if (isActive) {
+                    tasksContainer.classList.remove('active');
+                    toggle.classList.remove('active');
+                } else {
+                    tasksContainer.classList.add('active');
+                    toggle.classList.add('active');
+                }
+            }
+        });
+    });
+}
+
+// Helper to open tab if a task is selected, but never close automatically
+function updateCategoryTabState(category) {
+    const tasksContainer = document.getElementById(`${category}-tasks`);
+    const header = document.querySelector(`.category-header[data-category="${category}"]`);
+    const toggle = header ? header.querySelector('.category-toggle') : null;
+    if (!tasksContainer || !toggle) return;
+    const checked = tasksContainer.querySelectorAll('.task-checkbox:checked').length > 0;
+    if (checked) {
+        tasksContainer.classList.add('active');
+        toggle.classList.add('active');
+    }
+    // Do not close tab if no tasks are checked
+}
+
+function updateCategoryVisibility() {
+    // Get all category cards
+    document.querySelectorAll('.category-card').forEach(categoryCard => {
+        const categoryHeader = categoryCard.querySelector('.category-header');
+        const categoryTasks = categoryCard.querySelector('.category-tasks');
+        const categoryToggle = categoryCard.querySelector('.category-toggle');
+        
+        if (!categoryTasks || !categoryToggle) return;
+        
+        // Check if any tasks in this category are selected
+        const checkboxes = categoryTasks.querySelectorAll('.task-checkbox');
+        const hasSelectedTasks = Array.from(checkboxes).some(checkbox => checkbox.checked);
+        
+        if (hasSelectedTasks) {
+            // Keep category open if it has selected tasks
+            categoryTasks.classList.add('active');
+            categoryToggle.classList.add('active');
+        } else {
+            // Close category if no tasks are selected
+            categoryTasks.classList.remove('active');
+            categoryToggle.classList.remove('active');
+        }
+    });
+}
+
 function populateTaskCategories() {
     Object.keys(taskData).forEach(category => {
         const tasksContainer = document.getElementById(`${category}-tasks`);
         if (!tasksContainer) return;
-        
         const tasks = taskData[category];
-        
         tasksContainer.innerHTML = tasks.map(task => `
             <div class="task-item" data-task-id="${task.id}">
                 <input type="checkbox" class="task-checkbox" id="${task.id}" />
@@ -795,6 +1130,10 @@ function populateTaskCategories() {
                             <i class="fas fa-dollar-sign"></i>
                             ${task.cost}
                         </div>
+                        <div class="task-frequency frequency-${task.frequency}">
+                            <i class="fas fa-calendar-alt"></i>
+                            ${task.frequency.charAt(0).toUpperCase() + task.frequency.slice(1)}
+                        </div>
                         <div class="task-difficulty difficulty-${task.difficulty}">
                             <i class="fas fa-signal"></i>
                             ${task.difficulty.charAt(0).toUpperCase() + task.difficulty.slice(1)}
@@ -806,13 +1145,11 @@ function populateTaskCategories() {
                 </div>
             </div>
         `).join('');
-
         // Add event listeners to checkboxes
         tasksContainer.querySelectorAll('.task-checkbox').forEach(checkbox => {
             checkbox.addEventListener('change', function() {
                 const taskId = this.id;
                 const taskItem = this.closest('.task-item');
-                
                 if (this.checked) {
                     selectedTasks.add(taskId);
                     taskItem.classList.add('selected');
@@ -821,10 +1158,28 @@ function populateTaskCategories() {
                     selectedTasks.delete(taskId);
                     taskItem.classList.remove('selected');
                 }
-                
+                // Update category visibility based on selected tasks
+                updateCategoryVisibility();
                 updateSummary();
             });
         });
+        // On load, ensure tab state matches any pre-selected tasks
+        updateCategoryVisibility();
+    });
+}
+
+function closeAllCategoryTabs() {
+    document.querySelectorAll('.category-tasks').forEach(container => {
+        container.classList.remove('active');
+    });
+    document.querySelectorAll('.category-toggle').forEach(toggle => {
+        toggle.classList.remove('active');
+    });
+}
+
+function updateAllCategoryTabStates() {
+    Object.keys(taskData).forEach(category => {
+        updateCategoryTabState(category);
     });
 }
 
@@ -832,82 +1187,142 @@ function addBundle(bundleName) {
     const bundleTasks = bundles[bundleName];
     if (!bundleTasks) return;
 
-    const clickedButton = document.querySelector(`.bundle-btn[data-bundle="${bundleName}"]`);
-    const wasAlreadyActive = clickedButton.classList.contains('active');
+    const bundleBtn = document.querySelector(`.bundle-btn[data-bundle="${bundleName}"]`);
+    const isActive = bundleBtn && bundleBtn.classList.contains('active');
 
-    // Clear all existing selections and their visual states first
-    selectedTasks.forEach(taskId => {
-        const checkbox = document.getElementById(taskId);
-        if (checkbox) {
+    // If the bundle is already active, deselect it (toggle off)
+    if (isActive) {
+        selectedTasks.clear();
+        selectedBundles.clear();
+        // Uncheck all task checkboxes
+        document.querySelectorAll('.task-checkbox').forEach(checkbox => {
             checkbox.checked = false;
             checkbox.closest('.task-item').classList.remove('selected');
+        });
+        // Remove active class from all bundle buttons
+        document.querySelectorAll('.bundle-btn').forEach(btn => {
+            btn.classList.remove('active');
+        });
+        updateCategoryVisibility();
+        updateSummary();
+        if (typeof updateBundleButtonStates === 'function') {
+            updateBundleButtonStates();
+        }
+        return;
+    }
+
+    // Otherwise, select the bundle as before
+    selectedTasks.clear();
+    selectedBundles.clear();
+    // Uncheck all task checkboxes
+    document.querySelectorAll('.task-checkbox').forEach(checkbox => {
+        checkbox.checked = false;
+        checkbox.closest('.task-item').classList.remove('selected');
+    });
+    // Remove active class from all bundle buttons
+    document.querySelectorAll('.bundle-btn').forEach(btn => {
+        btn.classList.remove('active');
+    });
+
+    selectedBundles.add(bundleName);
+    bundleTasks.forEach(taskId => {
+        selectedTasks.add(taskId);
+        const checkbox = document.getElementById(taskId);
+        if (checkbox) {
+            checkbox.checked = true;
+            checkbox.closest('.task-item').classList.add('selected');
         }
     });
-    selectedTasks.clear(); // Ensure the set is empty after unchecking
-
-    document.querySelectorAll('.bundle-btn').forEach(btn => {
-        btn.classList.remove('active'); // Remove active from all bundle buttons
-        btn.classList.remove('success-highlight'); // Remove any lingering animations
-    });
-    selectedBundles.clear(); // Clear the set that tracks active bundles
-
-    if (!wasAlreadyActive) {
-        // If the clicked button was NOT active, activate it and its tasks
-        selectedBundles.add(bundleName);
-        bundleTasks.forEach(taskId => {
-            selectedTasks.add(taskId);
-            const checkbox = document.getElementById(taskId);
-            if (checkbox) {
-                checkbox.checked = true;
-                checkbox.closest('.task-item').classList.add('selected');
-            }
-        });
-        clickedButton.classList.add('active');
-        clickedButton.classList.add('success-highlight');
-        setTimeout(() => {
-            clickedButton.classList.remove('success-highlight');
-        }, 1000);
+    if (bundleBtn) {
+        bundleBtn.classList.add('active');
     }
-    // If wasAlreadyActive is true, we simply cleared everything and didn't re-add it,
-    // effectively deselecting the bundle. This is the desired toggle behavior.
-
+    updateCategoryVisibility();
     updateSummary();
-    // The updateBundleButtonStates() function call is now redundant as its logic
-    // is directly handled within this function.
+    if (typeof updateBundleButtonStates === 'function') {
+        updateBundleButtonStates();
+    }
+}
+
+// Helper function to calculate frequency-adjusted hours and costs
+function calculateFrequencyAdjustedValues(selectedTasksArray) {
+    let monthlyHours = 0;
+    let annualHours = 0;
+    let monthlyCost = 0;
+    let annualCost = 0;
+    
+    selectedTasksArray.forEach(taskId => {
+        const task = findTaskById(taskId);
+        if (task) {
+            switch(task.frequency) {
+                case 'weekly':
+                    monthlyHours += task.timeHours * 4; // 4 weeks per month
+                    annualHours += task.timeHours * 52; // 52 weeks per year
+                    monthlyCost += task.costAmount * 4;
+                    annualCost += task.costAmount * 52;
+                    break;
+                case 'biweekly':
+                    monthlyHours += task.timeHours * 2; // 2 times per month
+                    annualHours += task.timeHours * 26; // 26 times per year
+                    monthlyCost += task.costAmount * 2;
+                    annualCost += task.costAmount * 26;
+                    break;
+                case 'monthly':
+                    monthlyHours += task.timeHours;
+                    annualHours += task.timeHours * 12;
+                    monthlyCost += task.costAmount;
+                    annualCost += task.costAmount * 12;
+                    break;
+                case 'quarterly':
+                    monthlyHours += task.timeHours / 3; // Average per month
+                    annualHours += task.timeHours * 4;
+                    monthlyCost += task.costAmount / 3;
+                    annualCost += task.costAmount * 4;
+                    break;
+                case 'seasonal':
+                    // Seasonal tasks are done once per year
+                    annualHours += task.timeHours;
+                    annualCost += task.costAmount;
+                    // For monthly average, divide by 12
+                    monthlyHours += task.timeHours / 12;
+                    monthlyCost += task.costAmount / 12;
+                    break;
+                default:
+                    // Default to monthly if no frequency specified
+                    monthlyHours += task.timeHours;
+                    annualHours += task.timeHours * 12;
+                    monthlyCost += task.costAmount;
+                    annualCost += task.costAmount * 12;
+                    break;
+            }
+        }
+    });
+    
+    return {
+        monthlyHours,
+        annualHours,
+        monthlyCost,
+        annualCost
+    };
 }
 
 function updateSummary() {
     const selectedTasksArray = Array.from(selectedTasks);
     
-    // Calculate base totals (monthly)
-    let totalDIYTime = 0;
-    let totalDIYCost = 0;
-    let totalMarketCost = 0;
+    // Calculate frequency-adjusted totals
+    const frequencyAdjusted = calculateFrequencyAdjustedValues(selectedTasksArray);
     
-    selectedTasksArray.forEach(taskId => {
-        const task = findTaskById(taskId);
-        if (task) {
-            totalDIYTime += task.timeHours;
-            totalDIYCost += 25; // Estimated supply cost
-            totalMarketCost += task.costAmount;
-        }
-    });
+    // Use the appropriate values based on current view
+    const totalDIYTime = isAnnualView ? frequencyAdjusted.annualHours : frequencyAdjusted.monthlyHours;
+    const totalMarketCost = isAnnualView ? frequencyAdjusted.annualCost : frequencyAdjusted.monthlyCost;
+    const totalDIYCost = isAnnualView ? (frequencyAdjusted.monthlyHours * 25 * 12) : (frequencyAdjusted.monthlyHours * 25); // $25/hour for DIY supplies/tools
 
     // Find recommended plan
-    const recommendedPlan = getRecommendedPlan(selectedTasksArray.length, totalDIYTime);
+    const recommendedPlan = getRecommendedPlan(selectedTasksArray.length, frequencyAdjusted.monthlyHours);
     const planCost = isAnnualView ? recommendedPlan.annualPrice : recommendedPlan.monthlyPrice;
     
-    // Calculate savings with proper scaling
-    let marketVsJamiezSavings;
-    let diyVsJamiezSavings;
-    
-    if (isAnnualView) {
-        marketVsJamiezSavings = (totalMarketCost * 12) - planCost;
-        diyVsJamiezSavings = ((totalDIYCost * 12) + (totalDIYTime * 25 * 12)) - planCost;
-    } else {
-        marketVsJamiezSavings = totalMarketCost - planCost;
-        diyVsJamiezSavings = (totalDIYCost + (totalDIYTime * 25)) - planCost;
-    }
+    // Calculate savings
+    const marketVsJamiezSavings = totalMarketCost - planCost;
+    const diyVsJamiezSavings = (totalDIYCost + (totalDIYTime * 25)) - planCost; // Adding time value at $25/hour
     
     const bestSavings = Math.max(marketVsJamiezSavings, 0);
 
@@ -918,7 +1333,8 @@ function updateSummary() {
         totalMarketCost,
         planCost,
         selectedTasksArray.length,
-        recommendedPlan
+        recommendedPlan,
+        frequencyAdjusted
     );
     
     // Update savings highlight
@@ -934,20 +1350,19 @@ function updateSummary() {
     }
 }
 
-function updateComparisonTable(diyTime, diyCost, marketCost, jamiezCost, taskCount, recommendedPlan) {
+function updateComparisonTable(diyTime, diyCost, marketCost, jamiezCost, taskCount, recommendedPlan, frequencyAdjusted) {
     const timeUnit = isAnnualView ? 'year' : 'month';
-    const multiplier = isAnnualView ? 12 : 1;
     
-    // Format time values
+    // Format time values (already adjusted for frequency)
     const formatTime = (hours) => {
-        const totalHours = Math.round(hours * multiplier);
+        const totalHours = Math.round(hours);
         return `${totalHours} hours/${timeUnit}`;
     };
     
-    // Format cost values
+    // Format cost values (already adjusted for frequency)
     const formatCost = (cost) => {
-        const totalCost = Math.round(cost * multiplier);
-        return `${totalCost.toLocaleString()}`;
+        const totalCost = Math.round(cost);
+        return `$${totalCost.toLocaleString()}`;
     };
     
     // Update time values
@@ -966,7 +1381,7 @@ function updateComparisonTable(diyTime, diyCost, marketCost, jamiezCost, taskCou
     
     if (diyCostEl) diyCostEl.textContent = formatCost(diyCost);
     if (marketCostEl) marketCostEl.textContent = formatCost(marketCost);
-    if (jamiezCostEl) jamiezCostEl.textContent = `${jamiezCost.toLocaleString()}`;
+    if (jamiezCostEl) jamiezCostEl.textContent = `$${jamiezCost.toLocaleString()}`;
     
     // Calculate and update coverage
     const coverage = taskCount <= recommendedPlan.maxTasks ? 100 : Math.round((recommendedPlan.maxTasks / taskCount) * 100);
@@ -993,7 +1408,6 @@ function updateComparisonTable(diyTime, diyCost, marketCost, jamiezCost, taskCou
 
 function updateSavingsHighlight(savings, timeHours) {
     const period = isAnnualView ? 'Annual' : 'Monthly';
-    const multiplier = isAnnualView ? 12 : 1;
     
     const savingsLabelEl = document.querySelector('.savings-label');
     const savingsValueEl = document.querySelector('.savings-value');
@@ -1001,9 +1415,9 @@ function updateSavingsHighlight(savings, timeHours) {
     const timeValueEl = document.querySelector('.time-value');
     
     if (savingsLabelEl) savingsLabelEl.textContent = `Potential ${period} Savings`;
-    if (savingsValueEl) savingsValueEl.textContent = savings > 0 ? `${Math.round(savings).toLocaleString()}` : '$0';
+    if (savingsValueEl) savingsValueEl.textContent = savings > 0 ? `$${Math.round(savings).toLocaleString()}` : '$0';
     if (timeLabelEl) timeLabelEl.textContent = 'Time Saved';
-    if (timeValueEl) timeValueEl.textContent = `${Math.round(timeHours * multiplier)} hours/${period.toLowerCase()}`;
+    if (timeValueEl) timeValueEl.textContent = `${Math.round(timeHours)} hours/${period.toLowerCase()}`;
     
     // Add animation for positive savings
     const savingsCard = document.querySelector('.savings-highlight');
@@ -1039,23 +1453,57 @@ function updatePlanCards(recommendedPlan) {
     }
 }
 
-function getRecommendedPlan(taskCount, timeHours) {
+function getRecommendedPlan(taskCount, monthlyHours) {
     const selectedTasksArray = Array.from(selectedTasks);
     
-    if (taskCount <= 4 && timeHours <= 6) {
+    // Calculate frequency-adjusted values for plan recommendation
+    const frequencyAdjusted = calculateFrequencyAdjustedValues(selectedTasksArray);
+    
+    // Check if any bundles are selected
+    if (selectedBundles.size > 0) {
+        const selectedBundle = Array.from(selectedBundles)[0];
+        
+        // Compare with appropriate service bundle
+        if (selectedBundle === 'pet-parents') {
+            return {
+                ...serviceBundles['pet-parents'],
+                type: 'bundle'
+            };
+        } else if (selectedBundle === 'seasonal-prep') {
+            return {
+                ...serviceBundles['seasons-greetings'],
+                type: 'bundle'
+            };
+        }
+    }
+    
+    // Default membership plan logic based on adjusted monthly hours
+    if (taskCount <= 4 && frequencyAdjusted.monthlyHours <= 6) {
         return {
             ...membershipPlans.essentials,
-            type: 'membership'
+            type: 'membership',
+            calculatedMonthlyCost: frequencyAdjusted.monthlyCost,
+            calculatedAnnualCost: frequencyAdjusted.annualCost,
+            monthlyHours: frequencyAdjusted.monthlyHours,
+            annualHours: frequencyAdjusted.annualHours
         };
-    } else if (taskCount <= 8 && timeHours <= 12) {
+    } else if (taskCount <= 8 && frequencyAdjusted.monthlyHours <= 12) {
         return {
             ...membershipPlans.executive,
-            type: 'membership'
+            type: 'membership',
+            calculatedMonthlyCost: frequencyAdjusted.monthlyCost,
+            calculatedAnnualCost: frequencyAdjusted.annualCost,
+            monthlyHours: frequencyAdjusted.monthlyHours,
+            annualHours: frequencyAdjusted.annualHours
         };
     } else { 
         return {
             ...membershipPlans.platinum,
-            type: 'membership'
+            type: 'membership',
+            calculatedMonthlyCost: frequencyAdjusted.monthlyCost,
+            calculatedAnnualCost: frequencyAdjusted.annualCost,
+            monthlyHours: frequencyAdjusted.monthlyHours,
+            annualHours: frequencyAdjusted.annualHours
         };
     }
 }
@@ -1114,28 +1562,72 @@ function addFooter(doc) {
 function downloadReport() {
     const { jsPDF } = window.jspdf;
     const doc = new jsPDF();
-    let currentY = 20; // Starting Y position
+    let currentY = 20;
 
-    // Add logo and title
-    doc.setFontSize(24);
-    doc.setTextColor(102, 126, 234); // Jamiez blue
-    doc.setFont('helvetica', 'bold'); // Correct bolding for title
-    doc.text('Jamiez Task Report', 20, currentY);
-    doc.setFont('helvetica', 'normal'); // Revert to normal after title
-    currentY += 6; // Further reduced spacing for title
-    
-    // Add date
-    doc.setFontSize(12);
-    doc.setTextColor(100);
-    doc.text(`Generated on: ${new Date().toLocaleDateString()}`, 20, currentY);
-    currentY += 15; // Further reduced spacing for date
+    // --- Contact & Household Info Section ---
+    const contactName = document.getElementById('contact_name')?.value || '';
+    const contactPhone = document.getElementById('contact_phone')?.value || '';
+    const contactEmail = document.getElementById('contact_email')?.value || '';
+    const contactStreet = document.getElementById('contact_street')?.value || '';
+    const contactCity = document.getElementById('contact_city')?.value || '';
+    const contactState = document.getElementById('contact_state')?.value || '';
+    const contactZip = document.getElementById('contact_zip')?.value || '';
+    const householdSize = document.getElementById('household_size')?.value || '';
+
+    // Only add section if at least one field is filled
+    if (
+        contactName || contactPhone || contactEmail ||
+        contactStreet || contactCity || contactState || contactZip || householdSize
+    ) {
+        doc.setFontSize(16);
+        doc.setFont('helvetica', 'bold');
+        doc.setTextColor(50);
+        doc.text('Contact & Household Info', 20, currentY);
+        doc.setFont('helvetica', 'normal');
+        currentY += 7;
+
+        const contactInfoData = [
+            ['Name', contactName || 'N/A'],
+            ['Phone', contactPhone || 'N/A'],
+            ['Email', contactEmail || 'N/A'],
+            ['Street Address', contactStreet || 'N/A'],
+            ['City', contactCity || 'N/A'],
+            ['State', contactState || 'N/A'],
+            ['Zip Code', contactZip || 'N/A'],
+            ['Household Size', householdSize || 'N/A']
+        ];
+
+        doc.autoTable({
+            startY: currentY,
+            head: [['Field', 'Value']],
+            body: contactInfoData,
+            theme: 'grid',
+            styles: {
+                font: 'helvetica',
+                fontSize: 12,
+                cellPadding: 4,
+                textColor: [50, 50, 50]
+            },
+            headStyles: {
+                fillColor: [102, 126, 234],
+                textColor: [255, 255, 255],
+                fontStyle: 'bold'
+            },
+            columnStyles: {
+                0: { fontStyle: 'bold', cellWidth: 50 },
+                1: { cellWidth: 'auto' }
+            },
+            margin: { left: 20, right: 20 },
+            didDrawPage: function(data) {
+                currentY = data.cursor.y;
+            }
+        });
+        currentY += 15;
+    }
 
     // --- Property Information Section ---
-    const MIN_SPACE_FOR_SECTION = 10; // Further reduced minimum space
-    const propertyInfoSectionEstHeight = 50; // Adjusted estimate
-    if (doc.internal.pageSize.height - currentY < propertyInfoSectionEstHeight + MIN_SPACE_FOR_SECTION) {
-        doc.addPage();
-        addFooter(doc); // Add footer to new page
+    const propertyInfoSectionEstHeight = 50;
+    if (doc.internal.pageSize.height - currentY < propertyInfoSectionEstHeight + 10) {
         currentY = 20;
     }
     doc.setFontSize(16);
@@ -1143,97 +1635,136 @@ function downloadReport() {
     doc.setTextColor(50);
     doc.text('Property Information', 20, currentY);
     doc.setFont('helvetica', 'normal');
-    currentY += 10; // Further reduced spacing after section title
+    currentY += 7;
 
-    // Get selected property type
+    // Gather property info
     const propertyType = document.querySelector('input[name="property-type"]:checked');
-    doc.setFontSize(12);
-    doc.setFont('helvetica', 'bold');
-    doc.text('Property Type:', 25, currentY);
-    doc.setFont('helvetica', 'normal');
-    if (propertyType) {
-        doc.text(`${propertyType.value.charAt(0).toUpperCase() + propertyType.value.slice(1)}`, 65, currentY);
-    } else {
-        doc.text('N/A', 65, currentY);
-    }
-    currentY += 10; // Further reduced spacing for next line
-
-    // Get selected lot types
     const lotTypes = Array.from(document.querySelectorAll('input[name="lot-type"]:checked'))
         .map(checkbox => checkbox.value.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' '));
-    doc.setFont('helvetica', 'bold');
-    doc.text('Lot Types:', 25, currentY);
-    doc.setFont('helvetica', 'normal');
-    if (lotTypes.length > 0) {
-        currentY += 6;
-        lotTypes.forEach(type => {
-            doc.text(`• ${type}`, 30, currentY);
-            currentY += 6; // Further reduced spacing
-        });
-    } else {
-        doc.text('N/A', 60, currentY);
-        currentY += 6; 
-    }
-    currentY += 6; // Further reduced additional spacing
-
-    // Get selected community features
     const communityFeatures = Array.from(document.querySelectorAll('input[name="community-features"]:checked'))
         .map(checkbox => checkbox.value.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' '));
-    doc.setFont('helvetica', 'bold');
-    doc.text('Community Features:', 25, currentY);
-    doc.setFont('helvetica', 'normal');
-    if (communityFeatures.length > 0) {
-        currentY += 6;
-        communityFeatures.forEach(feature => {
-            doc.text(`• ${feature}`, 30, currentY);
-            currentY += 6; // Further reduced spacing
-        });
-    } else {
-        doc.text('N/A', 90, currentY);
-        currentY += 6; 
-    }
-    currentY += 6; // Further reduced additional spacing
-
-    // Get selected pets & animals
     const petsAnimals = Array.from(document.querySelectorAll('input[name="pets-animals"]:checked'))
         .map(checkbox => checkbox.value.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' '));
-    doc.setFont('helvetica', 'bold');
-    doc.text('Pets & Animals:', 25, currentY);
-    doc.setFont('helvetica', 'normal');
-    if (petsAnimals.length > 0) {
-        currentY += 6;
-        petsAnimals.forEach(item => {
-            doc.text(`• ${item}`, 30, currentY);
-            currentY += 6; // Further reduced spacing
-        });
-    } else {
-        doc.text('N/A', 80, currentY);
-        currentY += 4; 
-    }
-    currentY += 6; // Further reduced additional spacing
-
-    // Get selected services & providers
     const servicesProviders = Array.from(document.querySelectorAll('input[name="services-providers"]:checked'))
         .map(checkbox => checkbox.value.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' '));
-    doc.setFont('helvetica', 'bold');
-    doc.text('Current Services & Providers:', 25, currentY);
-    doc.setFont('helvetica', 'normal');
-    if (servicesProviders.length > 0) {
-        currentY += 6;
-        servicesProviders.forEach(service => {
-            doc.text(`• ${service}`, 30, currentY);
-            currentY += 20; // Further reduced spacing
+
+    const propertyInfoData = [
+        ['Property Type', propertyType ? (propertyType.value.charAt(0).toUpperCase() + propertyType.value.slice(1)) : 'N/A'],
+        ['Lot Types', lotTypes.length > 0 ? lotTypes.join(', ') : 'N/A'],
+        ['Community Features', communityFeatures.length > 0 ? communityFeatures.join(', ') : 'N/A'],
+        ['Pets & Animals', petsAnimals.length > 0 ? petsAnimals.join(', ') : 'N/A'],
+        ['Services & Providers', servicesProviders.length > 0 ? servicesProviders.join(', ') : 'N/A']
+    ];
+
+    doc.autoTable({
+        startY: currentY,
+        head: [['Field', 'Value']],
+        body: propertyInfoData,
+        theme: 'grid',
+        styles: {
+            font: 'helvetica',
+            fontSize: 12,
+            cellPadding: 4,
+            textColor: [50, 50, 50]
+        },
+        headStyles: {
+            fillColor: [102, 126, 234],
+            textColor: [255, 255, 255],
+            fontStyle: 'bold'
+        },
+        columnStyles: {
+            0: { fontStyle: 'bold', cellWidth: 50 },
+            1: { cellWidth: 'auto' }
+        },
+        margin: { left: 20, right: 20 },
+        didDrawPage: function(data) {
+            currentY = data.cursor.y;
+        }
+    });
+    currentY += 15;
+    doc.addPage();
+    currentY = 20;
+
+    // --- Vehicle Information Section ---
+    const autoCareSection = document.getElementById('auto-care-section');
+    if (autoCareSection && autoCareSection.style.display !== 'none') {
+        if (doc.internal.pageSize.height - currentY < 120) {
+            doc.addPage();
+            currentY = 20;
+        }
+        
+        doc.setFontSize(16);
+        doc.setFont('helvetica', 'bold');
+        doc.setTextColor(50);
+        doc.text('Vehicle Information', 20, currentY);
+        doc.setFont('helvetica', 'normal');
+        currentY += 10;
+
+        // Retrieve all AutoCare survey data
+        const make = document.getElementById('make')?.value || 'N/A';
+        const model = document.getElementById('model')?.value || 'N/A';
+        const year = document.getElementById('year')?.value || 'N/A';
+        const mileage = document.getElementById('mileage')?.value || 'N/A';
+        const mechanicUse = document.querySelector('input[name="mechanic_use"]:checked')?.value || 'N/A';
+        const mechanicName = document.getElementById('mechanic_name')?.value || 'N/A';
+        const lastService = document.getElementById('last_service')?.value || 'N/A';
+        const nextService = document.getElementById('next_service')?.value || 'N/A';
+        const additionalNotes = document.getElementById('additional_notes')?.value || 'N/A';
+
+        // Get selected services
+        const selectedServicesCheckboxes = document.querySelectorAll('input[name="services_needed"]:checked');
+        const servicesNeeded = Array.from(selectedServicesCheckboxes).map(cb => cb.value.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase())).join(', ') || 'None selected';
+
+        const vehicleInfoData = [
+            ['Vehicle', `${year} ${make} ${model}`],
+            ['Mileage', `${mileage}`],
+            ['Use Mechanic?', `${mechanicUse.charAt(0).toUpperCase() + mechanicUse.slice(1)}`],
+        ];
+
+        // Conditionally add mechanic details if "Yes" was selected
+        if (mechanicUse === 'yes') {
+            vehicleInfoData.push(['Mechanic\'s Name', mechanicName]);
+            vehicleInfoData.push(['Last Service Date', lastService]);
+            vehicleInfoData.push(['Next Recommended Service', nextService]);
+        }
+
+        vehicleInfoData.push(['Services Interested In', servicesNeeded]);
+        if (additionalNotes !== 'N/A') {
+            vehicleInfoData.push(['Additional Notes', additionalNotes]);
+        }
+
+        doc.autoTable({
+            startY: currentY,
+            head: [['Field', 'Value']],
+            body: vehicleInfoData,
+            theme: 'grid',
+            styles: {
+                font: 'helvetica',
+                fontSize: 12,
+                cellPadding: 4,
+                textColor: [50, 50, 50]
+            },
+            headStyles: {
+                fillColor: [102, 126, 234],
+                textColor: [255, 255, 255],
+                fontStyle: 'bold'
+            },
+            columnStyles: {
+                0: { fontStyle: 'bold', cellWidth: 50 },
+                1: { cellWidth: 'auto' }
+            },
+            margin: { left: 20, right: 20 },
+            didDrawPage: function(data) {
+                currentY = data.cursor.y;
+            }
         });
-    } else {
-        doc.text('N/A', 120, currentY);
-        currentY += 6; 
+        currentY += 15;
     }
-    currentY += 6; // Further reduced spacing after property info section
 
     // --- Selected Tasks Section ---
-    if (doc.internal.pageSize.height - currentY < 20) { // Adjusted estimate space
+    if (doc.internal.pageSize.height - currentY < 20) {
         doc.addPage();
-        addFooter(doc); // Add footer to new page
+        addFooter(doc);
         currentY = 20;
     }
 
@@ -1242,9 +1773,9 @@ function downloadReport() {
     doc.setTextColor(50);
     doc.text('Selected Tasks', 20, currentY);
     doc.setFont('helvetica', 'normal');
-    currentY += 10; // Further reduced spacing
+    currentY += 7;
     
-    // Create table for selected tasks
+    // Create table for selected tasks with frequency information
     const selectedTasksArray = Array.from(selectedTasks);
     const tasksData = selectedTasksArray.map(taskId => {
         const task = findTaskById(taskId);
@@ -1252,102 +1783,214 @@ function downloadReport() {
             task.name,
             task.time,
             task.cost,
+            task.frequency.charAt(0).toUpperCase() + task.frequency.slice(1),
             task.difficulty.charAt(0).toUpperCase() + task.difficulty.slice(1)
         ];
     });
     
     doc.autoTable({
         startY: currentY,
-        head: [['Task', 'Time Estimate', 'Cost', 'Difficulty']],
+        head: [['Task', 'Time Estimate', 'Cost', 'Frequency', 'Difficulty']],
         body: tasksData,
         theme: 'grid',
-        headStyles: { fillColor: [102, 126, 234] },
-        styles: { fontSize: 10 },
-        columnStyles: {
-            0: { cellWidth: 80 },
-            1: { cellWidth: 40 },
-            2: { cellWidth: 40 },
-            3: { cellWidth: 30 }
+        styles: {
+            font: 'helvetica',
+            fontSize: 10.5,
+            cellPadding: 2,
+            textColor: [50, 50, 50],
+            minCellHeight: 12
         },
-        didDrawPage: function(data) {
-            addFooter(doc); // Add footer to every page the table spans
-        }
+        headStyles: {
+            fillColor: [102, 126, 234],
+            textColor: [255, 255, 255],
+            fontStyle: 'bold',
+            cellPadding: 3
+        },
+        columnStyles: {
+            0: { cellWidth: 80 },  // Task column 
+        1: { cellWidth: 25 },  // Time Estimate
+        2: { cellWidth: 25 },  // Cost
+        3: { cellWidth: 26 },  // Frequency 
+        4: { cellWidth: 25 }   // Difficulty 
+        },
+        margin: { left: 20, right: 20 }
     });
 
     // Update currentY after the table
     if (doc.lastAutoTable && typeof doc.lastAutoTable.finalY === 'number') {
-        currentY = doc.lastAutoTable.finalY + 25; // Increased spacing after the table
+        currentY = doc.lastAutoTable.finalY + 10;
     } else {
-        // Fallback if autoTable didn't run or failed to set finalY
-        currentY += (tasksData.length * 5) + 30; // Adjusted estimate table height + padding
+        currentY += (tasksData.length * 5) + 15;
     }
 
-    // --- Summary and Savings Sections ---
-    const estimatedSummarySavingsHeight = Math.max(5 * 10, 2 * 10) + 10; // Kept as before approx height
-    const FOOTER_HEIGHT = 20;
+    // Add total tasks selected right after the tasks table
+    doc.setTextColor(50);
+    doc.setFont('helvetica', 'normal');
+    doc.setFontSize(12);
+    const tasksText = `Total Tasks Selected: ${selectedTasksArray.length}`;
+    doc.text(tasksText, 20, currentY);
+    currentY += 20;
 
-    if (doc.internal.pageSize.height - currentY < estimatedSummarySavingsHeight + FOOTER_HEIGHT) {
+    // --- Calculate frequency-adjusted values for summary ---
+    const frequencyAdjusted = calculateFrequencyAdjustedValues(selectedTasksArray);
+    
+    // Calculate totals using frequency-adjusted values
+    const monthlyTime = frequencyAdjusted.monthlyHours;
+    const annualTime = frequencyAdjusted.annualHours;
+    const monthlyCost = frequencyAdjusted.monthlyCost;
+    const annualCost = frequencyAdjusted.annualCost;
+    const monthlyDIYCost = monthlyTime * 25; // $25/hour for DIY supplies/tools
+    const annualDIYCost = annualTime * 25;
+    
+    // Get recommended plan
+    const recommendedPlan = getRecommendedPlan(selectedTasksArray.length, monthlyTime);
+
+    // --- Savings Analysis Section ---
+    // Always start Savings Analysis on a new page
+    doc.addPage();
+    addFooter(doc);
+    currentY = 20;
+
+    doc.setFontSize(16);
+    doc.setTextColor(40, 167, 69);
+    doc.setFont('helvetica', 'bold');
+    doc.text('Savings Analysis', 20, currentY);
+    doc.setFont('helvetica', 'normal');
+    currentY += 7;
+
+    // Calculate savings for both monthly and annual
+    const monthlyMarketSavings = monthlyCost - recommendedPlan.monthlyPrice;
+    const annualMarketSavings = annualCost - recommendedPlan.annualPrice;
+    const monthlyDIYSavings = (monthlyDIYCost + (monthlyTime * 25)) - recommendedPlan.monthlyPrice; // Adding time value
+    const annualDIYSavings = (annualDIYCost + (annualTime * 25)) - recommendedPlan.annualPrice;
+
+    const savingsData = [
+        ['Comparison', 'Monthly Savings', 'Annual Savings'],
+        ['vs. Market Services', 
+         monthlyMarketSavings > 0 ? `$${Math.round(monthlyMarketSavings).toLocaleString()}` : `$${Math.round(Math.abs(monthlyMarketSavings)).toLocaleString()}`,
+         annualMarketSavings > 0 ? `$${Math.round(annualMarketSavings).toLocaleString()}` : `$${Math.round(Math.abs(annualMarketSavings)).toLocaleString()}`
+        ],
+        ['Time Saved', `${Math.round(monthlyTime)} hours`, `${Math.round(annualTime)} hours`]
+    ];
+
+    doc.autoTable({
+        startY: currentY,
+        head: [savingsData[0]],
+        body: savingsData.slice(1),
+        theme: 'grid',
+        styles: {
+            font: 'helvetica',
+            fontSize: 12,
+            cellPadding: 4,
+            textColor: [50, 50, 50]
+        },
+        headStyles: {
+            fillColor: [40, 167, 69],
+            textColor: [255, 255, 255],
+            fontStyle: 'bold'
+        },
+        columnStyles: {
+            0: { fontStyle: 'bold', cellWidth: 60 },
+            1: { cellWidth: 35 },
+            2: { cellWidth: 35 }
+        },
+        margin: { left: 20, right: 20 }
+    });
+
+    // Update currentY after savings table
+    if (doc.lastAutoTable && typeof doc.lastAutoTable.finalY === 'number') {
+        currentY = doc.lastAutoTable.finalY + 15;
+    } else {
+        currentY += 25;
+    }
+
+    // --- Summary Section ---
+    if (doc.internal.pageSize.height - currentY < 80) {
         doc.addPage();
-        addFooter(doc); // Add footer to new page
+        addFooter(doc);
         currentY = 20;
     }
 
-    // Add Summary section (left side)
-    let summarySectionY = currentY;
-    const summaryX = 20;
+    // Create rectangular box for recommended plan
+    const boxX = 20;
+    const boxY = currentY;
+    const boxWidth = 170;
+    const boxHeight = 35;
+
+    // Draw the main box with rounded corners effect
+    doc.setFillColor(102, 126, 234); // Jamiez blue color
+    doc.setDrawColor(102, 126, 234);
+    doc.setLineWidth(0.5);
+    doc.roundedRect(boxX, boxY, boxWidth, boxHeight, 3, 3, 'FD'); // 'FD' = Fill and Draw
+
+    // Add plan information inside the box
+    doc.setTextColor(255, 255, 255); // White text
+    doc.setFont('helvetica', 'bold');
+    doc.setFontSize(22);
+
+    // Plan name - centered horizontally
+    const planNameText = `Recommended Plan: ${recommendedPlan.name}`;
+    const planNameWidth = doc.getTextWidth(planNameText);
+    const planNameX = boxX + (boxWidth - planNameWidth) / 2;
+    doc.text(planNameText, planNameX, boxY + 15);
+
+    // Annual cost - centered horizontally
+    doc.setFontSize(16);
+    const costText = `$${recommendedPlan.annualPrice.toLocaleString()} / year`;
+    const costWidth = doc.getTextWidth(costText);
+    const costX = boxX + (boxWidth - costWidth) / 2;
+    doc.text(costText, costX, boxY + 25);
+
+    // Add extra space after the box before Next Steps
+    currentY = boxY + boxHeight + 25;
+
+    // --- Next Steps Section ---
+    if (doc.internal.pageSize.height - currentY < 40) {
+        doc.addPage();
+        addFooter(doc);
+        currentY = 20;
+    }
+
     doc.setFontSize(16);
     doc.setTextColor(50);
     doc.setFont('helvetica', 'bold');
-    doc.text('Summary', summaryX, summarySectionY);
+    doc.text('Next Steps', 20, currentY);
     doc.setFont('helvetica', 'normal');
-    summarySectionY += 10; // Further reduced spacing after section title
+    currentY += 7;
 
-    // Calculate totals
-    let totalTime = 0;
-    let totalCost = 0;
-    selectedTasksArray.forEach(taskId => {
-        const task = findTaskById(taskId);
-        if (task) {
-            totalTime += task.timeHours;
-            totalCost += task.costAmount;
-        }
+    doc.setFontSize(12);
+    doc.setTextColor(50);
+    const nextSteps = [
+        '1. Contact Jamiez to schedule a consultation',
+        '2. Discuss your specific needs with our team',
+        '3. Customize your plan based on your household requirements',
+        '4. Start enjoying more time for what matters most!'
+    ];
+
+    nextSteps.forEach(step => {
+        doc.text(step, 25, currentY);
+        currentY += 8;
     });
-    
-    // Get recommended plan
-    const recommendedPlan = getRecommendedPlan(selectedTasksArray.length, totalTime);
-    
-    // Add summary details
-    doc.setFontSize(12);
-    doc.text([
-        `Total Tasks Selected: ${selectedTasksArray.length}`,
-        `Total Time Required: ${Math.round(totalTime)} hours`,
-        `Estimated Market Cost: $${Math.round(totalCost).toLocaleString()}`,
-        `Recommended Plan: ${recommendedPlan.name}`,
-        `Plan Cost: $${isAnnualView ? recommendedPlan.annualPrice.toLocaleString() : recommendedPlan.monthlyPrice.toLocaleString()}/${isAnnualView ? 'year' : 'month'}`
-    ], summaryX, summarySectionY, {lineHeightFactor: 2.0}); // Adjusted line spacing
 
-    // Add savings calculation section (right side)
-    let savingsSectionY = currentY; // Start at the same Y as summary for side-by-side
-    const savingsX = doc.internal.pageSize.width / 2 + 10;
-    doc.setFontSize(14);
-    doc.setTextColor(40, 167, 69); // Green color
+    currentY += 9;
+
+    // Contact information
     doc.setFont('helvetica', 'bold');
-    doc.text('Potential Savings', savingsX, savingsSectionY);
+    doc.text('Contact Information:', 20, currentY);
     doc.setFont('helvetica', 'normal');
-    savingsSectionY += 10; // Further reduced spacing after section title
-    
-    const marketVsJamiezSavings = isAnnualView ? 
-        (totalCost * 12) - recommendedPlan.annualPrice :
-        totalCost - recommendedPlan.monthlyPrice;
-    
-    doc.setFontSize(12);
-    doc.setTextColor(100); // Reset color for savings values
-    doc.text([
-        `Monthly Savings: $${Math.round(marketVsJamiezSavings / (isAnnualView ? 12 : 1)).toLocaleString()}`,
-        `Annual Savings: $${Math.round(marketVsJamiezSavings).toLocaleString()}`
-    ], savingsX, savingsSectionY, {lineHeightFactor: 1.7}); // Kept line spacing
+    currentY += 8;
 
-    // Add footer to the very last page explicitly
+    const contactInfo = [
+        'Website: www.jamiez.com',
+        'Email: support@jamiez.com',
+    ];
+
+    contactInfo.forEach(info => {
+        doc.text(info, 25, currentY);
+        currentY += 6;
+    });
+
+    // Add footer to the final page
     addFooter(doc);
     
     // Save the PDF

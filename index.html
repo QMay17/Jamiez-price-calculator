@@ -29,6 +29,58 @@
                 </div>
 
                 <div class="know-you-categories">
+                    <!-- Contact & Household Info (Optional) -->
+                    <div class="know-you-card">
+                        <div class="know-you-header">
+                            <div class="know-you-icon">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="know-you-info">
+                                <h3>👤 Contact & Household Info <span style="font-weight:400;font-size:0.95em;color:#888;">(Optional)</span></h3>
+                            </div>
+                        </div>
+                        <div class="know-you-options">
+                            <div class="option-group">
+                                <div class="input-grid">
+                                    <div class="question-group">
+                                        <label class="question-label" for="contact_name">Name</label>
+                                        <input type="text" id="contact_name" name="contact_name" class="text-input" placeholder="Your name (optional)">
+                                    </div>
+                                    <div class="question-group">
+                                        <label class="question-label" for="contact_phone">Phone Number</label>
+                                        <input type="tel" id="contact_phone" name="contact_phone" class="text-input" placeholder="e.g., (555) 123-4567 (optional)">
+                                    </div>
+                                    <div class="question-group">
+                                        <label class="question-label" for="contact_email">Email Address</label>
+                                        <input type="email" id="contact_email" name="contact_email" class="text-input" placeholder="e.g., you@email.com (optional)">
+                                        <div class="error-message" id="contact_email_error" style="display:none;">Please enter a valid email address</div>
+                                    </div>
+                                    <div class="question-group">
+                                        <label class="question-label" for="contact_street">Street Address</label>
+                                        <input type="text" id="contact_street" name="contact_street" class="text-input" placeholder="Street address (optional)">
+                                    </div>
+                                    <div class="question-group">
+                                        <label class="question-label" for="contact_city">City</label>
+                                        <input type="text" id="contact_city" name="contact_city" class="text-input" placeholder="City (optional)">
+                                    </div>
+                                    <div class="question-group">
+                                        <label class="question-label" for="contact_state">State</label>
+                                        <input type="text" id="contact_state" name="contact_state" class="text-input" placeholder="State (optional)">
+                                    </div>
+                                    <div class="question-group">
+                                        <label class="question-label" for="contact_zip">Zip Code</label>
+                                        <input type="text" id="contact_zip" name="contact_zip" class="text-input" placeholder="Zip code (optional)">
+                                    </div>
+                                </div>
+                                <div class="question-group" style="display: flex; align-items: center; gap: 12px;">
+                                    <label class="question-label" for="household_size" style="margin-bottom:0;">How many people in the household?</label>
+                                    <input type="number" id="household_size" name="household_size" class="number-input" min="1" placeholder="e.g., 4 (optional)" style="width: 100px;">
+                                </div>
+                                <div class="error-message" id="household_size_error" style="display:none; margin-left: 0;">Please enter a whole number (e.g., 4)</div>
+                            </div>
+                        </div>
+                    </div>
+
                     <!-- Property & Lot Type -->
                     <div class="know-you-card">
                         <div class="know-you-header">
@@ -203,6 +255,283 @@
                 </div>
             </div>
 
+            <!-- Automobile Section -->
+            <div class="automobile-section">
+                <div class="section-header">
+                    <h2>🚗 AutoCare</h2>
+                    <p>Vehicle Maintenance Survey</p>
+
+                    <div class="section-toggle" id="automobile-toggle">
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+
+                <div class="automobile-content" id="automobile-content">
+                    <div class="survey-categories">
+                        <!-- Basic Vehicle Information -->
+                        <div class="survey-card">
+                            <div class="survey-header">
+                                <div class="survey-icon">
+                                    <i class="fas fa-car"></i>
+                                </div>
+                                <div class="survey-info">
+                                    <h3>🚘 Basic Vehicle Information</h3>
+                                </div>
+                            </div>
+                            <div class="survey-content">
+                                <div class="input-grid">
+                                    <div class="question-group">
+                                        <label class="question-label" for="make">Make</label>
+                                        <input type="text" id="make" name="make" class="text-input" placeholder="e.g., Toyota, Honda, Ford">
+                                        <div class="error-message">Please enter your vehicle's make</div>
+                                    </div>
+                                    
+                                    <div class="question-group">
+                                        <label class="question-label" for="model">Model</label>
+                                        <input type="text" id="model" name="model" class="text-input" placeholder="e.g., Camry, Civic, F-150">
+                                        <div class="error-message">Please enter your vehicle's model</div>
+                                    </div>
+                                    
+                                    <div class="question-group">
+                                        <label class="question-label" for="year">Year</label>
+                                        <input type="number" id="year" name="year" class="number-input" min="1990" max="2025" placeholder="2020">
+                                        <div class="error-message">Please enter a valid year</div>
+                                    </div>
+                                    
+                                    <div class="question-group">
+                                        <label class="question-label" for="mileage">Mileage</label>
+                                        <input type="number" id="mileage" name="mileage" class="number-input" min="0" placeholder="75000">
+                                        <div class="error-message">Please enter your vehicle's mileage</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="question-group">
+                                    <label class="question-label">Primary Usage</label>
+                                    <div class="toggle-group">
+                                        <label class="toggle-option">
+                                            <input type="radio" name="purpose" value="city">
+                                            City Driving
+                                        </label>
+                                        <label class="toggle-option">
+                                            <input type="radio" name="purpose" value="highway">
+                                            Highway Driving
+                                        </label>
+                                        <label class="toggle-option">
+                                            <input type="radio" name="purpose" value="both">
+                                            Both
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Maintenance Awareness -->
+                        <div class="survey-card">
+                            <div class="survey-header">
+                                <div class="survey-icon">
+                                    <i class="fas fa-tools"></i>
+                                </div>
+                                <div class="survey-info">
+                                    <h3>🛠 Maintenance Awareness</h3>
+                                </div>
+                            </div>
+                            <div class="survey-content">
+                                <div class="question-group">
+                                    <label class="question-label">When was your last oil change?</label>
+                                    <div class="toggle-group">
+                                        <label class="toggle-option">
+                                            <input type="radio" name="oil_change" value="1_month">
+                                            1 Month
+                                        </label>
+                                        <label class="toggle-option">
+                                            <input type="radio" name="oil_change" value="2_months">
+                                            2 Months
+                                        </label>
+                                        <label class="toggle-option">
+                                            <input type="radio" name="oil_change" value="3_months">
+                                            3 Months
+                                        </label>
+                                        <label class="toggle-option">
+                                            <input type="radio" name="oil_change" value="6_months">
+                                            6 Months
+                                        </label>
+                                        <label class="toggle-option">
+                                            <input type="radio" name="oil_change" value="1_year">
+                                            1 Year+
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="question-group">
+                                    <label class="question-label">When were your tires last rotated?</label>
+                                    <div class="toggle-group">
+                                        <label class="toggle-option">
+                                            <input type="radio" name="tire_rotation" value="1_month">
+                                            1 Month
+                                        </label>
+                                        <label class="toggle-option">
+                                            <input type="radio" name="tire_rotation" value="2_months">
+                                            2 Months
+                                        </label>
+                                        <label class="toggle-option">
+                                            <input type="radio" name="tire_rotation" value="3_months">
+                                            3 Months
+                                        </label>
+                                        <label class="toggle-option">
+                                            <input type="radio" name="tire_rotation" value="6_months">
+                                            6 Months
+                                        </label>
+                                        <label class="toggle-option">
+                                            <input type="radio" name="tire_rotation" value="1_year">
+                                            1 Year+
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="question-group">
+                                    <label class="question-label">Is your car showing any warning lights on the dashboard?</label>
+                                    <div class="toggle-group">
+                                        <label class="toggle-option">
+                                            <input type="radio" name="warning_lights" value="yes">
+                                            Yes
+                                        </label>
+                                        <label class="toggle-option">
+                                            <input type="radio" name="warning_lights" value="no">
+                                            No
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="question-group">
+                                    <label class="question-label">Does your car make any unusual noises?</label>
+                                    <div class="toggle-group">
+                                        <label class="toggle-option">
+                                            <input type="radio" name="unusual_noises" value="yes">
+                                            Yes
+                                        </label>
+                                        <label class="toggle-option">
+                                            <input type="radio" name="unusual_noises" value="no">
+                                            No
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="question-group">
+                                    <label class="question-label">Does your car have any performance issues?</label>
+                                    <div class="toggle-group">
+                                        <label class="toggle-option">
+                                            <input type="radio" name="performance_issues" value="yes">
+                                            Yes
+                                        </label>
+                                        <label class="toggle-option">
+                                            <input type="radio" name="performance_issues" value="no">
+                                            No
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="question-group">
+                                    <label class="question-label">Have you had any recent repairs or part replacements?</label>
+                                    <div class="toggle-group">
+                                        <label class="toggle-option">
+                                            <input type="radio" name="recent_repairs" value="yes">
+                                            Yes
+                                        </label>
+                                        <label class="toggle-option">
+                                            <input type="radio" name="recent_repairs" value="no">
+                                            No
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Routine Care -->
+                        <div class="survey-card">
+                            <div class="survey-header">
+                                <div class="survey-icon">
+                                    <i class="fas fa-clipboard-check"></i>
+                                </div>
+                                <div class="survey-info">
+                                    <h3>🧾 Routine Care</h3>
+                                </div>
+                            </div>
+                            <div class="survey-content">
+                                <div class="question-group">
+                                    <label class="question-label">Do you have a preferred mechanic or auto shop?</label>
+                                    <div class="toggle-group">
+                                        <label class="toggle-option">
+                                            <input type="radio" name="preferred_mechanic" value="yes" id="mechanic_yes">
+                                            Yes
+                                        </label>
+                                        <label class="toggle-option">
+                                            <input type="radio" name="preferred_mechanic" value="no" id="mechanic_no">
+                                            No
+                                        </label>
+                                    </div>
+                                    
+                                    <div class="conditional-content" id="mechanic_details">
+                                        <div class="question-group">
+                                            <label class="question-label" for="shop_name">Shop Name</label>
+                                            <input type="text" id="shop_name" name="shop_name" class="text-input" placeholder="Enter shop name">
+                                        </div>
+                                        
+                                        <div class="question-group">
+                                            <label class="question-label" for="shop_location">Location</label>
+                                            <input type="text" id="shop_location" name="shop_location" class="text-input" placeholder="Enter location/address">
+                                        </div>
+                                        
+                                        <div class="question-group">
+                                            <label class="question-label" for="preference_reason">Why do you prefer this auto shop?</label>
+                                            <input type="text" id="preference_reason" name="preference_reason" class="text-input" placeholder="e.g., Great service, fair prices, convenient location">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="question-group">
+                                    <label class="question-label">When is your next scheduled maintenance (if any)?</label>
+                                    <div class="toggle-group">
+                                        <label class="toggle-option">
+                                            <input type="radio" name="next_maintenance" value="instantly">
+                                            Needed Now
+                                        </label>
+                                        <label class="toggle-option">
+                                            <input type="radio" name="next_maintenance" value="1_month">
+                                            In 1 Month
+                                        </label>
+                                        <label class="toggle-option">
+                                            <input type="radio" name="next_maintenance" value="2_months">
+                                            In 2 Months
+                                        </label>
+                                        <label class="toggle-option">
+                                            <input type="radio" name="next_maintenance" value="3_months">
+                                            In 3 Months
+                                        </label>
+                                        <label class="toggle-option">
+                                            <input type="radio" name="next_maintenance" value="6_months">
+                                            In 6 Months
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="question-group">
+                                    <label class="question-label">Would you like help keeping track of future checkups and reminders?</label>
+                                    <div class="toggle-group">
+                                        <label class="toggle-option">
+                                            <input type="radio" name="tracking_help" value="yes">
+                                            Yes
+                                        </label>
+                                        <label class="toggle-option">
+                                            <input type="radio" name="tracking_help" value="no">
+                                            No
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>     
+            </div>
 
             <!-- Task Selector Section -->
             <div class="task-selector-section">
@@ -246,6 +575,9 @@
                                 <h3>🌳 Front Yard</h3>
                                 <p>Lawn care, landscaping, and front entrance maintenance</p>
                             </div>
+                            <div class="category-toggle">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
                         </div>
                         <div class="category-tasks" id="front-yard-tasks"></div>
                     </div>
@@ -259,6 +591,9 @@
                             <div class="category-info">
                                 <h3>🌿 Side Yards (Left / Right)</h3>
                                 <p>Utility access, storage, and maintenance areas</p>
+                            </div>
+                            <div class="category-toggle">
+                                <i class="fas fa-chevron-down"></i>
                             </div>
                         </div>
                         <div class="category-tasks" id="side-yards-tasks"></div>
@@ -274,6 +609,9 @@
                                 <h3>🌺 Back Yard</h3>
                                 <p>Outdoor living spaces, recreation, and garden areas</p>
                             </div>
+                            <div class="category-toggle">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
                         </div>
                         <div class="category-tasks" id="back-yard-tasks"></div>
                     </div>
@@ -287,6 +625,9 @@
                             <div class="category-info">
                                 <h3>🪑 Outdoor Furniture & Extras</h3>
                                 <p>Patio furniture, recreational equipment, and outdoor amenities</p>
+                            </div>
+                            <div class="category-toggle">
+                                <i class="fas fa-chevron-down"></i>
                             </div>
                         </div>
                         <div class="category-tasks" id="outdoor-furniture-tasks"></div>
@@ -302,6 +643,9 @@
                                 <h3>🚗 Garage / Carport</h3>
                                 <p>Vehicle storage, organization, and garage maintenance</p>
                             </div>
+                            <div class="category-toggle">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
                         </div>
                         <div class="category-tasks" id="garage-tasks"></div>
                     </div>
@@ -315,6 +659,9 @@
                             <div class="category-info">
                                 <h3>🏠 Structures & Building Exterior</h3>
                                 <p>Roof, siding, windows, and exterior building maintenance</p>
+                            </div>
+                            <div class="category-toggle">
+                                <i class="fas fa-chevron-down"></i>
                             </div>
                         </div>
                         <div class="category-tasks" id="exterior-tasks"></div>
@@ -330,6 +677,9 @@
                                 <h3>🐶 Pet Care</h3>
                                 <p>Walking, feeding, grooming, and pet services</p>
                             </div>
+                            <div class="category-toggle">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
                         </div>
                         <div class="category-tasks" id="pet-care-tasks"></div>
                     </div>
@@ -344,6 +694,9 @@
                                 <h3>🕸️ Pest & Wildlife Concerns</h3>
                                 <p>Pest and Wildlife control services</p>
                             </div>
+                            <div class="category-toggle">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
                         </div>
                         <div class="category-tasks" id="pest-wildlife-tasks"></div>
                     </div>
@@ -357,6 +710,9 @@
                             <div class="category-info">
                                 <h3>🚿 Utilities & Extras</h3>
                                 <p>Water systems, backup power, and utility maintenance</p>
+                            </div>
+                            <div class="category-toggle">
+                                <i class="fas fa-chevron-down"></i>
                             </div>
                         </div>
                         <div class="category-tasks" id="utilities-tasks"></div>
