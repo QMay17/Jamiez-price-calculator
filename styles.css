@@ -197,6 +197,7 @@ body {
     max-width: 1200px;
     width: 100%;
     overflow: visible;
+    min-height: 80px; /* Compact when closed */
 }
 
 .automobile-section .section-header {
@@ -258,6 +259,8 @@ body {
 .automobile-content {
     display: none;
     transition: all 0.3s ease;
+    min-height: 500px;
+    max-height: none;
 }
 
 .automobile-content.active {
@@ -496,6 +499,7 @@ body {
     .automobile-section {
         padding: 40px 32px;
         margin: 32px auto;
+        min-height: 80px;
     }
     
     .input-grid {
@@ -509,6 +513,7 @@ body {
     .automobile-section {
         padding: 24px 16px;
         margin: 24px auto;
+        min-height: 80px;
     }
 
     .section-toggle {
@@ -1783,11 +1788,57 @@ body {
     align-items: center;
     gap: 10px;
 }
-.add-vehicle-btn:hover {
+.add-vehicle-btn:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+.add-vehicle-btn:hover:not(:disabled) {
     background: linear-gradient(135deg, #7ea4f1 0%, #667eea 100%);
     transform: translateY(-2px);
     box-shadow: 0 8px 30px rgba(102, 126, 234, 0.25);
 }
-.add-vehicle-btn i {
-    font-size: 1.2rem;
+
+.remove-vehicle-btn {
+    background: #dc3545;
+    color: white;
+    border: none;
+    padding: 10px 24px;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-top: 12px;
+    margin-bottom: 0;
+    margin-left: 0;
+    align-self: flex-end;
+}
+.remove-vehicle-btn:hover {
+    background: #b52a37;
+}
+
+@media (max-width: 1024px) {
+    .automobile-section {
+        min-height: 80px;
+    }
+    #vehicle-forms {
+        gap: 24px;
+    }
+}
+@media (max-width: 768px) {
+    .automobile-section {
+        min-height: 80px;
+        padding: 24px 8px;
+    }
+    #vehicle-forms {
+        gap: 16px;
+    }
+    .vehicle-btn-row {
+        margin-top: 16px;
+    }
+}
+
+.vehicle-form:not(:first-child) {
+    margin-top: 40px;
 }

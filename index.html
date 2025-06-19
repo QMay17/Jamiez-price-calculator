@@ -124,7 +124,7 @@
                         </div>
                         <div class="know-you-options">
                             <div class="option-group">
-                                <h4>Property Type</h4>
+                                <h4>What type of property is this?</h4>
                                 <div class="radio-group">
                                     <label class="radio-option">
                                         <input type="radio" name="property-type" value="house">
@@ -145,7 +145,7 @@
                                 </div>
                             </div>
                             <div class="option-group">
-                                <h4>Lot Type</h4>
+                                <h4>What kind of lot is the property on?</h4>
                                 <div class="checkbox-group">
                                     <label class="checkbox-option">
                                         <input type="checkbox" name="lot-type" value="corner-lot">
@@ -166,7 +166,7 @@
                                 </div>
                             </div>
                             <div class="option-group">
-                                <h4>Community Features</h4>
+                                <h4>Does the property have any of these community features?</h4>
                                 <div class="checkbox-group">
                                     <label class="checkbox-option">
                                         <input type="checkbox" name="community-features" value="gated-community">
@@ -192,7 +192,7 @@
                                 <i class="fas fa-paw"></i>
                             </div>
                             <div class="know-you-info">
-                                <h3>🐾 Pets & Animals</h3>
+                                <h3>🐾 Which types of pets or animals are present on the property?</h3>
                             </div>
                         </div>
                         <div class="know-you-options">
@@ -250,7 +250,7 @@
                                 <i class="fas fa-tools"></i>
                             </div>
                             <div class="know-you-info">
-                                <h3>🔧 Services & Maintenance Providers</h3>
+                                <h3>🔧 Who helps take care of the property?</h3>
                             </div>
                         </div>
                         <div class="know-you-options">
@@ -299,279 +299,12 @@
                 </div>
 
                 <div class="automobile-content" id="automobile-content">
-                    <div class="survey-categories">
-                        <!-- Basic Vehicle Information -->
-                        <div class="survey-card">
-                            <div class="survey-header">
-                                <div class="survey-icon">
-                                    <i class="fas fa-car"></i>
-                                </div>
-                                <div class="survey-info">
-                                    <h3>🚘 Basic Vehicle Information</h3>
-                                </div>
-                            </div>
-                            <div class="survey-content">
-                                <div class="input-grid">
-                                    <div class="question-group">
-                                        <label class="question-label" for="make">Make</label>
-                                        <input type="text" id="make" name="make" class="text-input" placeholder="e.g., Toyota, Honda, Ford">
-                                        <div class="error-message">Please enter your vehicle's make</div>
-                                    </div>
-                                    
-                                    <div class="question-group">
-                                        <label class="question-label" for="model">Model</label>
-                                        <input type="text" id="model" name="model" class="text-input" placeholder="e.g., Camry, Civic, F-150">
-                                        <div class="error-message">Please enter your vehicle's model</div>
-                                    </div>
-                                    
-                                    <div class="question-group">
-                                        <label class="question-label" for="year">Year</label>
-                                        <input type="number" id="year" name="year" class="number-input" min="1990" max="2025" placeholder="2020">
-                                        <div class="error-message">Please enter a valid year</div>
-                                    </div>
-                                    
-                                    <div class="question-group">
-                                        <label class="question-label" for="mileage">Mileage</label>
-                                        <input type="number" id="mileage" name="mileage" class="number-input" min="0" placeholder="75000">
-                                        <div class="error-message">Please enter your vehicle's mileage</div>
-                                    </div>
-                                </div>
-
-                                <div class="question-group" style="display: flex; align-items: center; gap: 12px; margin-top: 12px;">
-                                    <label class="question-label" style="margin-bottom:0;">What’s your primary type of vehicle usage?</label>
-                                    <div class="radio-group" style="display: flex; gap: 18px; align-items: center; margin-left: 16px;">
-                                        <label class="radio-option">
-                                            <input type="radio" name="purpose" value="city">
-                                            <span class="radio-label">City Driving</span>
-                                        </label>
-                                        <label class="radio-option">
-                                            <input type="radio" name="purpose" value="highway">
-                                            <span class="radio-label">Highway Driving</span>
-                                        </label>
-                                        <label class="radio-option">
-                                            <input type="radio" name="purpose" value="both">
-                                            <span class="radio-label">Both</span>
-                                        </label>
-                                    </div>
-                                </div>
-                                 
-                                <div class="question-group" style="display: flex; align-items: center; gap: 12px; margin-top: 12px;">
-                                    <label class="question-label" for="usage-frequency" style="margin-bottom:0;">How often do you use your vehicle?</label>
-                                    <select id="usage-frequency" name="usage-frequency" class="text-input" style="max-width:320px;">
-                                        <option value="" disabled selected>Select frequency</option>
-                                        <option value="daily">Daily</option>
-                                        <option value="few_times_week">A few times a week</option>
-                                        <option value="few_times_month">A few times a month</option>
-                                        <option value="rarely">Rarely</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Maintenance Awareness -->
-                        <div class="survey-card">
-                            <div class="survey-header">
-                                <div class="survey-icon">
-                                    <i class="fas fa-tools"></i>
-                                </div>
-                                <div class="survey-info">
-                                    <h3>🛠 Maintenance Awareness</h3>
-                                </div>
-                            </div>
-                            <div class="survey-content">
-                                <div class="question-group">
-                                    <label class="question-label">When was your last oil change?</label>
-                                    <div class="toggle-group">
-                                        <label class="toggle-option">
-                                            <input type="radio" name="oil_change" value="1_month">
-                                            1 Month
-                                        </label>
-                                        <label class="toggle-option">
-                                            <input type="radio" name="oil_change" value="2_months">
-                                            2 Months
-                                        </label>
-                                        <label class="toggle-option">
-                                            <input type="radio" name="oil_change" value="3_months">
-                                            3 Months
-                                        </label>
-                                        <label class="toggle-option">
-                                            <input type="radio" name="oil_change" value="6_months">
-                                            6 Months
-                                        </label>
-                                        <label class="toggle-option">
-                                            <input type="radio" name="oil_change" value="1_year">
-                                            1 Year+
-                                        </label>
-                                    </div>
-                                </div>
-
-                                <div class="question-group">
-                                    <label class="question-label">When were your tires last rotated?</label>
-                                    <div class="toggle-group">
-                                        <label class="toggle-option">
-                                            <input type="radio" name="tire_rotation" value="1_month">
-                                            1 Month
-                                        </label>
-                                        <label class="toggle-option">
-                                            <input type="radio" name="tire_rotation" value="2_months">
-                                            2 Months
-                                        </label>
-                                        <label class="toggle-option">
-                                            <input type="radio" name="tire_rotation" value="3_months">
-                                            3 Months
-                                        </label>
-                                        <label class="toggle-option">
-                                            <input type="radio" name="tire_rotation" value="6_months">
-                                            6 Months
-                                        </label>
-                                        <label class="toggle-option">
-                                            <input type="radio" name="tire_rotation" value="1_year">
-                                            1 Year+
-                                        </label>
-                                    </div>
-                                </div>
-
-                                <div class="question-group">
-                                    <label class="question-label">Is your car showing any warning lights on the dashboard?</label>
-                                    <div class="toggle-group">
-                                        <label class="toggle-option">
-                                            <input type="radio" name="warning_lights" value="yes">
-                                            Yes
-                                        </label>
-                                        <label class="toggle-option">
-                                            <input type="radio" name="warning_lights" value="no">
-                                            No
-                                        </label>
-                                    </div>
-                                </div>
-
-                                <div class="question-group">
-                                    <label class="question-label">Does your car make any unusual noises?</label>
-                                    <div class="toggle-group">
-                                        <label class="toggle-option">
-                                            <input type="radio" name="unusual_noises" value="yes">
-                                            Yes
-                                        </label>
-                                        <label class="toggle-option">
-                                            <input type="radio" name="unusual_noises" value="no">
-                                            No
-                                        </label>
-                                    </div>
-                                </div>
-
-                                <div class="question-group">
-                                    <label class="question-label">Does your car have any performance issues?</label>
-                                    <div class="toggle-group">
-                                        <label class="toggle-option">
-                                            <input type="radio" name="performance_issues" value="yes">
-                                            Yes
-                                        </label>
-                                        <label class="toggle-option">
-                                            <input type="radio" name="performance_issues" value="no">
-                                            No
-                                        </label>
-                                    </div>
-                                </div>
-
-                                <div class="question-group">
-                                    <label class="question-label">Have you had any recent repairs or part replacements?</label>
-                                    <div class="toggle-group">
-                                        <label class="toggle-option">
-                                            <input type="radio" name="recent_repairs" value="yes">
-                                            Yes
-                                        </label>
-                                        <label class="toggle-option">
-                                            <input type="radio" name="recent_repairs" value="no">
-                                            No
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Routine Care -->
-                        <div class="survey-card">
-                            <div class="survey-header">
-                                <div class="survey-icon">
-                                    <i class="fas fa-clipboard-check"></i>
-                                </div>
-                                <div class="survey-info">
-                                    <h3>🧾 Routine Care</h3>
-                                </div>
-                            </div>
-                            <div class="survey-content">
-                                <div class="question-group">
-                                    <label class="question-label">Do you have a preferred mechanic or auto shop?</label>
-                                    <div class="toggle-group">
-                                        <label class="toggle-option">
-                                            <input type="radio" name="preferred_mechanic" value="yes" id="mechanic_yes">
-                                            Yes
-                                        </label>
-                                        <label class="toggle-option">
-                                            <input type="radio" name="preferred_mechanic" value="no" id="mechanic_no">
-                                            No
-                                        </label>
-                                    </div>
-                                    
-                                    <div class="conditional-content" id="mechanic_details">
-                                        <div class="question-group">
-                                            <label class="question-label" for="shop_name">Shop Name</label>
-                                            <input type="text" id="shop_name" name="shop_name" class="text-input" placeholder="Enter shop name">
-                                        </div>
-                                        
-                                        <div class="question-group">
-                                            <label class="question-label" for="shop_location">Location</label>
-                                            <input type="text" id="shop_location" name="shop_location" class="text-input" placeholder="Enter location/address">
-                                        </div>
-                                        
-                                        <div class="question-group">
-                                            <label class="question-label" for="preference_reason">Why do you prefer this auto shop?</label>
-                                            <input type="text" id="preference_reason" name="preference_reason" class="text-input" placeholder="e.g., Great service, fair prices, convenient location">
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="question-group">
-                                    <label class="question-label">When is your next scheduled maintenance (if any)?</label>
-                                    <div class="toggle-group">
-                                        <label class="toggle-option">
-                                            <input type="radio" name="next_maintenance" value="instantly">
-                                            Needed Now
-                                        </label>
-                                        <label class="toggle-option">
-                                            <input type="radio" name="next_maintenance" value="1_month">
-                                            In 1 Month
-                                        </label>
-                                        <label class="toggle-option">
-                                            <input type="radio" name="next_maintenance" value="2_months">
-                                            In 2 Months
-                                        </label>
-                                        <label class="toggle-option">
-                                            <input type="radio" name="next_maintenance" value="3_months">
-                                            In 3 Months
-                                        </label>
-                                        <label class="toggle-option">
-                                            <input type="radio" name="next_maintenance" value="6_months">
-                                            In 6 Months
-                                        </label>
-                                    </div>
-                                </div>
-
-                                <div class="question-group">
-                                    <label class="question-label">Would you like help keeping track of future checkups and reminders?</label>
-                                    <div class="toggle-group">
-                                        <label class="toggle-option">
-                                            <input type="radio" name="tracking_help" value="yes">
-                                            Yes
-                                        </label>
-                                        <label class="toggle-option">
-                                            <input type="radio" name="tracking_help" value="no">
-                                            No
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    <!-- Multi-vehicle forms will be injected here by JS -->
+                    <div id="vehicle-forms"></div>
+                    <div class="vehicle-btn-row">
+                        <button type="button" class="add-vehicle-btn" id="add-vehicle-btn">
+                            <i class="fas fa-plus"></i> Add Vehicle
+                        </button>
                     </div>
                 </div>     
             </div>
@@ -585,7 +318,7 @@
 
                 <!-- Quick Add Bundles -->
                 <div class="quick-bundles">
-                    <h3>Quick Add Bundles</h3>
+                    <h3>Do any of these describe you?</h3>
                     <div class="bundle-buttons">
                         <button class="bundle-btn" data-bundle="new-homeowner">
                             <i class="fas fa-home"></i>

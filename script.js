@@ -805,6 +805,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // --- MULTI-VEHICLE SUPPORT ---
     const vehicleFormsContainer = document.getElementById('vehicle-forms');
     const addVehicleBtn = document.getElementById('add-vehicle-btn');
+    let vehicleCount = 0;
+    const maxVehicles = 3;
 
     // Template for a vehicle form (as HTML string)
     function getVehicleFormHTML(index) {
@@ -844,27 +846,9 @@ document.addEventListener('DOMContentLoaded', function() {
                                 <div class="error-message">Please enter your vehicle's mileage</div>
                             </div>
                         </div>
-                        <div class="question-group">
-                            <label class="question-label">What's your primary type of vehicle usage?</label>
-                            <div class="toggle-group">
-                                <label class="toggle-option">
-                                    <input type="radio" name="purpose_${index}" value="city">
-                                    City Driving
-                                </label>
-                                <label class="toggle-option">
-                                    <input type="radio" name="purpose_${index}" value="highway">
-                                    Highway Driving
-                                </label>
-                                <label class="toggle-option">
-                                    <input type="radio" name="purpose_${index}" value="both">
-                                    Both
-                                </label>
-                            </div>
-                        </div>
-                        <!-- New: Usage Frequency Dropdown -->
-                        <div class="question-group">
-                            <label class="question-label" for="usage_frequency_${index}">How often do you use your vehicle?</label>
-                            <select id="usage_frequency_${index}" name="usage_frequency_${index}" class="text-input" style="margin-top:8px;max-width:320px;">
+                        <div class="question-group" style="display: flex; align-items: center; gap: 16px;">
+                            <label class="question-label" for="usage_frequency_${index}" style="margin-bottom:0;">How often do you use your vehicle?</label>
+                            <select id="usage_frequency_${index}" name="usage_frequency_${index}" class="text-input" style="max-width:220px; margin-left: 8px;">
                                 <option value="" disabled selected>Select frequency</option>
                                 <option value="daily">Daily</option>
                                 <option value="few_times_week">A few times a week</option>
@@ -1068,18 +1052,11 @@ document.addEventListener('DOMContentLoaded', function() {
                     </div>
                 </div>
             </div>
-            ${index > 1 ? '<button type="button" class="remove-vehicle-btn" style="margin:16px 0 0 0;">Remove Vehicle</button>' : ''}
+            ${index > 1 ? '<button type="button" class="remove-vehicle-btn">Remove Vehicle</button>' : ''}
         </div>
         `;
     }
 
-    // Helper to get the next vehicle index
-    function getNextVehicleIndex() {
-        const forms = vehicleFormsContainer.querySelectorAll('.vehicle-form');
-        return forms.length + 1;
-    }
-
-    // Add event listeners for mechanic details toggle in a vehicle form
     function setupMechanicToggleForForm(form) {
         const yesRadio = form.querySelector('.mechanic-yes');
         const noRadio = form.querySelector('.mechanic-no');
@@ -1096,29 +1073,47 @@ document.addEventListener('DOMContentLoaded', function() {
         noRadio.addEventListener('change', toggle);
     }
 
-    // Add event listener for remove button
     function setupRemoveButtonForForm(form) {
         const removeBtn = form.querySelector('.remove-vehicle-btn');
         if (removeBtn) {
             removeBtn.addEventListener('click', function() {
                 form.remove();
+                vehicleCount--;
+                if (addVehicleBtn) addVehicleBtn.disabled = false;
+                updateRemoveButtons();
             });
         }
     }
 
-    // Add a new vehicle form
+    function updateRemoveButtons() {
+        // Only show remove button for forms after the first
+        const forms = vehicleFormsContainer.querySelectorAll('.vehicle-form');
+        forms.forEach((form, idx) => {
+            const btn = form.querySelector('.remove-vehicle-btn');
+            if (btn) {
+                btn.style.display = idx === 0 ? 'none' : 'inline-block';
+            }
+        });
+    }
+
     function addVehicleForm() {
-        const index = getNextVehicleIndex();
+        if (vehicleCount >= maxVehicles) return;
+        const index = vehicleCount + 1;
         const wrapper = document.createElement('div');
         wrapper.innerHTML = getVehicleFormHTML(index);
         const form = wrapper.firstElementChild;
         vehicleFormsContainer.appendChild(form);
         setupMechanicToggleForForm(form);
         setupRemoveButtonForForm(form);
+        vehicleCount++;
+        if (vehicleCount >= maxVehicles && addVehicleBtn) {
+            addVehicleBtn.disabled = true;
+        }
+        updateRemoveButtons();
     }
 
-    // Initial setup for the first form
-    setupMechanicToggleForForm(vehicleFormsContainer.querySelector('.vehicle-form'));
+    // Initial setup: render the first vehicle form
+    addVehicleForm();
 
     // Add vehicle button click
     if (addVehicleBtn) {
@@ -1218,118 +1213,35 @@ function setupKnowYouListeners() {
 }
 
 function setupAutomobileListeners() {
-    // Handle conditional content display for mechanic details
-    const mechanicYes = document.getElementById('mechanic_yes');
-    const mechanicNo = document.getElementById('mechanic_no');
-    const mechanicDetails = document.getElementById('mechanic_details');
-
-    function toggleMechanicDetails() {
-        if (mechanicYes && mechanicYes.checked) {
-            mechanicDetails.classList.add('active');
-        } else {
-            mechanicDetails.classList.remove('active');
-        }
-    }
-
-    if (mechanicYes) mechanicYes.addEventListener('change', toggleMechanicDetails);
-    if (mechanicNo) mechanicNo.addEventListener('change', toggleMechanicDetails);
-
-    // Form validation for automobile inputs
-    const requiredFields = ['make', 'model', 'year', 'mileage'];
-
-    function validateField(fieldName) {
-        const field = document.getElementById(fieldName);
-        if (!field) return true;
-        
-        const errorMessage = field.nextElementSibling;
-        
-        if (!field.value.trim()) {
-            field.classList.add('error');
-            if (errorMessage) errorMessage.classList.add('show');
-            return false;
-        } else {
-            field.classList.remove('error');
-            if (errorMessage) errorMessage.classList.remove('show');
-            return true;
-        }
-    }
-
-    // Real-time validation
-    requiredFields.forEach(fieldName => {
-        const field = document.getElementById(fieldName);
-        if (field) {
-            field.addEventListener('blur', () => validateField(fieldName));
-            field.addEventListener('input', () => {
-                if (field.value.trim()) {
-                    field.classList.remove('error');
-                    const errorMessage = field.nextElementSibling;
-                    if (errorMessage) errorMessage.classList.remove('show');
-                }
-            });
-        }
-    });
-
-    // Year field specific validation
-    const yearField = document.getElementById('year');
-    if (yearField) {
-        yearField.addEventListener('input', function() {
-            const currentYear = new Date().getFullYear();
-            if (this.value && (this.value < 1990 || this.value > currentYear + 1)) {
-                this.classList.add('error');
-                this.nextElementSibling.textContent = `Please enter a year between 1990 and ${currentYear + 1}`;
-                this.nextElementSibling.classList.add('show');
-            } else if (this.value) {
-                this.classList.remove('error');
-                this.nextElementSibling.classList.remove('show');
-            }
-        });
-    }
+    // No-op for dynamic vehicle forms
 }
 
 function setupAutomobileToggle() {
-    console.log('Setting up automobile toggle...');
-    
     const automobileHeader = document.querySelector('.automobile-section .section-header');
     const automobileContent = document.getElementById('automobile-content');
     const automobileSection = document.querySelector('.automobile-section');
-    
-    console.log('Header found:', automobileHeader);
-    console.log('Content found:', automobileContent);
-    console.log('Section found:', automobileSection);
 
     function toggleAutomobileSection() {
-        console.log('Toggle function called!');
-        
-        if (!automobileContent) {
-            console.log('No automobile content found');
-            return;
-        }
-        
+        if (!automobileContent) return;
         const isActive = automobileContent.classList.contains('active');
-        console.log('Is active:', isActive);
-        
         if (isActive) {
-            // Hide the section
             automobileContent.classList.remove('active');
             if (automobileSection) automobileSection.classList.remove('expanded');
-            console.log('Hiding section');
         } else {
-            // Show the section
             automobileContent.classList.add('active');
             if (automobileSection) automobileSection.classList.add('expanded');
-            console.log('Showing section');
         }
     }
 
-    // Add click listener to the entire header
+    // Hide by default (ensure .active is not set)
+    if (automobileContent) automobileContent.classList.remove('active');
+    if (automobileSection) automobileSection.classList.remove('expanded');
+
+    // Add click listener to the entire header (green box)
     if (automobileHeader) {
-        console.log('Adding click listener to header');
         automobileHeader.addEventListener('click', function(e) {
-            console.log('Header clicked!', e);
             toggleAutomobileSection();
         });
-    } else {
-        console.log('No header found to attach listener to');
     }
 }
 
