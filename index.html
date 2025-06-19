@@ -72,6 +72,37 @@
                                         <input type="text" id="contact_zip" name="contact_zip" class="text-input" placeholder="Zip code (optional)">
                                     </div>
                                 </div>
+                                <!-- New question: Which age group best describes you? -->
+                                <div class="question-group" style="display: flex; align-items: center; gap: 12px; margin-top: 12px;">
+                                    <label class="question-label" for="age_group" style="margin-bottom:0;">Which age group best describes you?</label>
+                                    <select id="age_group" name="age_group" class="number-input" style="width: 160px; margin-left: 16px;">
+                                        <option value="" disabled selected>Select age group</option>
+                                        <option value="25-34">25–34</option>
+                                        <option value="35-44">35–44</option>
+                                        <option value="45-55">45–55</option>
+                                        <option value="60-69">60–69</option>
+                                        <option value="70-79">70–79</option>
+                                        <option value="80+">80+</option>
+                                    </select>
+                                </div>
+                                <!-- New question: Are there children or teenagers living in your home? -->
+                                <div class="question-group" style="display: flex; align-items: center; gap: 12px; margin-top: 12px;">
+                                    <label class="question-label" style="margin-bottom:0;">Are there children or teenagers living in your home?</label>
+                                    <div class="radio-group" style="display: flex; gap: 18px; align-items: center; margin-left: 16px;">
+                                        <label class="radio-option">
+                                            <input type="radio" name="children-teens" value="yes">
+                                            <span class="radio-label">Yes</span>
+                                        </label>
+                                        <label class="radio-option">
+                                            <input type="radio" name="children-teens" value="no">
+                                            <span class="radio-label">No</span>
+                                        </label>
+                                        <label class="radio-option">
+                                            <input type="radio" name="children-teens" value="prefer-not-to-say">
+                                            <span class="radio-label">Prefer not to say</span>
+                                        </label>
+                                    </div>
+                                </div>
                                 <div class="question-group" style="display: flex; align-items: center; gap: 12px;">
                                     <label class="question-label" for="household_size" style="margin-bottom:0;">How many people in the household?</label>
                                     <input type="number" id="household_size" name="household_size" class="number-input" min="1" placeholder="e.g., 4 (optional)" style="width: 100px;">
@@ -208,6 +239,7 @@
                                         <span class="checkbox-label">Crustaceans (Hermit Crab, Shrimp)</span>
                                     </label>
                                 </div>                                
+                            </div>
                         </div>
                     </div>
 
@@ -304,23 +336,34 @@
                                         <div class="error-message">Please enter your vehicle's mileage</div>
                                     </div>
                                 </div>
-                                
-                                <div class="question-group">
-                                    <label class="question-label">Primary Usage</label>
-                                    <div class="toggle-group">
-                                        <label class="toggle-option">
+
+                                <div class="question-group" style="display: flex; align-items: center; gap: 12px; margin-top: 12px;">
+                                    <label class="question-label" style="margin-bottom:0;">What’s your primary type of vehicle usage?</label>
+                                    <div class="radio-group" style="display: flex; gap: 18px; align-items: center; margin-left: 16px;">
+                                        <label class="radio-option">
                                             <input type="radio" name="purpose" value="city">
-                                            City Driving
+                                            <span class="radio-label">City Driving</span>
                                         </label>
-                                        <label class="toggle-option">
+                                        <label class="radio-option">
                                             <input type="radio" name="purpose" value="highway">
-                                            Highway Driving
+                                            <span class="radio-label">Highway Driving</span>
                                         </label>
-                                        <label class="toggle-option">
+                                        <label class="radio-option">
                                             <input type="radio" name="purpose" value="both">
-                                            Both
+                                            <span class="radio-label">Both</span>
                                         </label>
                                     </div>
+                                </div>
+                                 
+                                <div class="question-group" style="display: flex; align-items: center; gap: 12px; margin-top: 12px;">
+                                    <label class="question-label" for="usage-frequency" style="margin-bottom:0;">How often do you use your vehicle?</label>
+                                    <select id="usage-frequency" name="usage-frequency" class="text-input" style="max-width:320px;">
+                                        <option value="" disabled selected>Select frequency</option>
+                                        <option value="daily">Daily</option>
+                                        <option value="few_times_week">A few times a week</option>
+                                        <option value="few_times_month">A few times a month</option>
+                                        <option value="rarely">Rarely</option>
+                                    </select>
                                 </div>
                             </div>
                         </div>

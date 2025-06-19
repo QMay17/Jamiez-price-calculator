@@ -740,7 +740,53 @@ const serviceBundles = {
         'fruit-trees',  'roof-inspection', 'gutters-downspouts', 
         'chimney-flue', 'backup-generator', 'septic-sewer',
         'fire-pit',  'outdoor-heaters',  'firewood-storage'],
-        maxTasks: 4
+        maxTasks: 12
+    }
+};
+
+// Time Saved Benefits Data from CSV
+const timeSavedBenefitsData = {
+    "Busy Professionals with Kids": {
+        1: "Enough time to sit down for dinner with your kids and hear about their day.",
+        2: "That's a slow afternoon at the park with your kids—no multitasking, just play.",
+        3: "Time for a family grocery run and ice cream after.",
+        4: "You could finally tackle the toy closet—or help with your child's school project.",
+        5: "Time to plan and have a real date night with your partner.",
+        6: "Enough time to do school drop-off, grab a coffee, and actually take a deep breath.",
+        8: "One full Saturday where you don't have to do anything—just be with your family.",
+        10: "Time to spend a whole day at a museum or the zoo with your kids.",
+        12: "Join your child's classroom for a reading day—or finally schedule your own doctor's appointment.",
+        15: "Get away for a real weekend—no packing panic, no chaos.",
+        20: "Take control of your month—rest, reset, or even start your own project.",
+        40: "That's the time to finally launch your side hustle—or spend a full week unplugged with family."
+    },
+    "Busy Professionals without Kids": {
+        1: "Time to enjoy a morning coffee without rushing out the door.",
+        2: "Catch a movie in theaters or take yourself out for brunch.",
+        3: "Join a workout class and still have time to unwind.",
+        4: "Go hiking, read a few chapters, and cook a nice dinner for yourself.",
+        5: "Start that hobby you've been putting off—pottery, photography, you name it.",
+        6: "Deep clean your space and spend the evening guilt-free.",
+        8: "A personal retreat day: journal, take a class, make something.",
+        10: "Take a long walk, meal prep for the week, and have a phone-free night.",
+        12: "Plan a weekend trip, or just rest up from a long few weeks.",
+        15: "Take a weekend workshop or writing retreat.",
+        20: "Use that time to train for a race, write your blog, or learn a new skill.",
+        40: "Take a long vacation without feeling like life will unravel while you're gone."
+    },
+    "Retired Individuals": {
+        1: "Just enough time for a relaxing neighborhood walk and a chat with a friend.",
+        2: "Attend a craft or gardening class at the community center.",
+        3: "Visit the library and flip through the magazines you used to love.",
+        4: "Drive to your favorite nature spot and enjoy the whole afternoon there.",
+        5: "Call your old college friend and catch up for real—not just texts.",
+        6: "Go through a memory box or photo album without feeling overwhelmed.",
+        8: "Join a community outing, then relax with a good book and tea.",
+        10: "Reorganize your living space with no rush or physical strain.",
+        12: "Plant a small garden and tend to it regularly.",
+        15: "Go visit your grandchildren and stay for the whole weekend.",
+        20: "Join a local club, learn something new, and still rest on weekends.",
+        40: "Start a memoir, travel to a new place, or finally sort and preserve your legacy keepsakes."
     }
 };
 
@@ -756,110 +802,330 @@ document.addEventListener('DOMContentLoaded', function() {
     populateTaskCategories();
     updateSummary();
 
-    document.addEventListener('DOMContentLoaded', function() {
-        const mechanicYes = document.getElementById('mechanic_yes');
-        const mechanicNo = document.getElementById('mechanic_no');
-        const mechanicDetails = document.getElementById('mechanic_details');
+    // --- MULTI-VEHICLE SUPPORT ---
+    const vehicleFormsContainer = document.getElementById('vehicle-forms');
+    const addVehicleBtn = document.getElementById('add-vehicle-btn');
 
-        function toggleMechanicDetails() {
-            if (mechanicYes.checked) {
-                mechanicDetails.classList.add('active');
+    // Template for a vehicle form (as HTML string)
+    function getVehicleFormHTML(index) {
+        return `
+        <div class="vehicle-form" data-vehicle-index="${index}">
+            <div class="survey-categories">
+                <!-- Basic Vehicle Information -->
+                <div class="survey-card">
+                    <div class="survey-header">
+                        <div class="survey-icon">
+                            <i class="fas fa-car"></i>
+                        </div>
+                        <div class="survey-info">
+                            <h3>🚘 Basic Vehicle Information</h3>
+                        </div>
+                    </div>
+                    <div class="survey-content">
+                        <div class="input-grid">
+                            <div class="question-group">
+                                <label class="question-label" for="make_${index}">Make</label>
+                                <input type="text" id="make_${index}" name="make_${index}" class="text-input" placeholder="e.g., Toyota, Honda, Ford">
+                                <div class="error-message">Please enter your vehicle's make</div>
+                            </div>
+                            <div class="question-group">
+                                <label class="question-label" for="model_${index}">Model</label>
+                                <input type="text" id="model_${index}" name="model_${index}" class="text-input" placeholder="e.g., Camry, Civic, F-150">
+                                <div class="error-message">Please enter your vehicle's model</div>
+                            </div>
+                            <div class="question-group">
+                                <label class="question-label" for="year_${index}">Year</label>
+                                <input type="number" id="year_${index}" name="year_${index}" class="number-input" min="1990" max="2025" placeholder="2020">
+                                <div class="error-message">Please enter a valid year</div>
+                            </div>
+                            <div class="question-group">
+                                <label class="question-label" for="mileage_${index}">Mileage</label>
+                                <input type="number" id="mileage_${index}" name="mileage_${index}" class="number-input" min="0" placeholder="75000">
+                                <div class="error-message">Please enter your vehicle's mileage</div>
+                            </div>
+                        </div>
+                        <div class="question-group">
+                            <label class="question-label">What's your primary type of vehicle usage?</label>
+                            <div class="toggle-group">
+                                <label class="toggle-option">
+                                    <input type="radio" name="purpose_${index}" value="city">
+                                    City Driving
+                                </label>
+                                <label class="toggle-option">
+                                    <input type="radio" name="purpose_${index}" value="highway">
+                                    Highway Driving
+                                </label>
+                                <label class="toggle-option">
+                                    <input type="radio" name="purpose_${index}" value="both">
+                                    Both
+                                </label>
+                            </div>
+                        </div>
+                        <!-- New: Usage Frequency Dropdown -->
+                        <div class="question-group">
+                            <label class="question-label" for="usage_frequency_${index}">How often do you use your vehicle?</label>
+                            <select id="usage_frequency_${index}" name="usage_frequency_${index}" class="text-input" style="margin-top:8px;max-width:320px;">
+                                <option value="" disabled selected>Select frequency</option>
+                                <option value="daily">Daily</option>
+                                <option value="few_times_week">A few times a week</option>
+                                <option value="few_times_month">A few times a month</option>
+                                <option value="rarely">Rarely</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <!-- Maintenance Awareness -->
+                <div class="survey-card">
+                    <div class="survey-header">
+                        <div class="survey-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <div class="survey-info">
+                            <h3>🛠 Maintenance Awareness</h3>
+                        </div>
+                    </div>
+                    <div class="survey-content">
+                        <div class="question-group">
+                            <label class="question-label">When was your last oil change?</label>
+                            <div class="toggle-group">
+                                <label class="toggle-option">
+                                    <input type="radio" name="oil_change_${index}" value="1_month">
+                                    1 Month
+                                </label>
+                                <label class="toggle-option">
+                                    <input type="radio" name="oil_change_${index}" value="2_months">
+                                    2 Months
+                                </label>
+                                <label class="toggle-option">
+                                    <input type="radio" name="oil_change_${index}" value="3_months">
+                                    3 Months
+                                </label>
+                                <label class="toggle-option">
+                                    <input type="radio" name="oil_change_${index}" value="6_months">
+                                    6 Months
+                                </label>
+                                <label class="toggle-option">
+                                    <input type="radio" name="oil_change_${index}" value="1_year">
+                                    1 Year+
+                                </label>
+                            </div>
+                        </div>
+                        <div class="question-group">
+                            <label class="question-label">When were your tires last rotated?</label>
+                            <div class="toggle-group">
+                                <label class="toggle-option">
+                                    <input type="radio" name="tire_rotation_${index}" value="1_month">
+                                    1 Month
+                                </label>
+                                <label class="toggle-option">
+                                    <input type="radio" name="tire_rotation_${index}" value="2_months">
+                                    2 Months
+                                </label>
+                                <label class="toggle-option">
+                                    <input type="radio" name="tire_rotation_${index}" value="3_months">
+                                    3 Months
+                                </label>
+                                <label class="toggle-option">
+                                    <input type="radio" name="tire_rotation_${index}" value="6_months">
+                                    6 Months
+                                </label>
+                                <label class="toggle-option">
+                                    <input type="radio" name="tire_rotation_${index}" value="1_year">
+                                    1 Year+
+                                </label>
+                            </div>
+                        </div>
+                        <div class="question-group">
+                            <label class="question-label">Is your car showing any warning lights on the dashboard?</label>
+                            <div class="toggle-group">
+                                <label class="toggle-option">
+                                    <input type="radio" name="warning_lights_${index}" value="yes">
+                                    Yes
+                                </label>
+                                <label class="toggle-option">
+                                    <input type="radio" name="warning_lights_${index}" value="no">
+                                    No
+                                </label>
+                            </div>
+                        </div>
+                        <div class="question-group">
+                            <label class="question-label">Does your car make any unusual noises?</label>
+                            <div class="toggle-group">
+                                <label class="toggle-option">
+                                    <input type="radio" name="unusual_noises_${index}" value="yes">
+                                    Yes
+                                </label>
+                                <label class="toggle-option">
+                                    <input type="radio" name="unusual_noises_${index}" value="no">
+                                    No
+                                </label>
+                            </div>
+                        </div>
+                        <div class="question-group">
+                            <label class="question-label">Does your car have any performance issues?</label>
+                            <div class="toggle-group">
+                                <label class="toggle-option">
+                                    <input type="radio" name="performance_issues_${index}" value="yes">
+                                    Yes
+                                </label>
+                                <label class="toggle-option">
+                                    <input type="radio" name="performance_issues_${index}" value="no">
+                                    No
+                                </label>
+                            </div>
+                        </div>
+                        <div class="question-group">
+                            <label class="question-label">Have you had any recent repairs or part replacements?</label>
+                            <div class="toggle-group">
+                                <label class="toggle-option">
+                                    <input type="radio" name="recent_repairs_${index}" value="yes">
+                                    Yes
+                                </label>
+                                <label class="toggle-option">
+                                    <input type="radio" name="recent_repairs_${index}" value="no">
+                                    No
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Routine Care -->
+                <div class="survey-card">
+                    <div class="survey-header">
+                        <div class="survey-icon">
+                            <i class="fas fa-clipboard-check"></i>
+                        </div>
+                        <div class="survey-info">
+                            <h3>🧾 Routine Care</h3>
+                        </div>
+                    </div>
+                    <div class="survey-content">
+                        <div class="question-group">
+                            <label class="question-label">Do you have a preferred mechanic or auto shop?</label>
+                            <div class="toggle-group">
+                                <label class="toggle-option">
+                                    <input type="radio" name="preferred_mechanic_${index}" value="yes" class="mechanic-yes">
+                                    Yes
+                                </label>
+                                <label class="toggle-option">
+                                    <input type="radio" name="preferred_mechanic_${index}" value="no" class="mechanic-no">
+                                    No
+                                </label>
+                            </div>
+                            <div class="conditional-content mechanic-details" style="display:none;">
+                                <div class="question-group">
+                                    <label class="question-label" for="shop_name_${index}">Shop Name</label>
+                                    <input type="text" id="shop_name_${index}" name="shop_name_${index}" class="text-input" placeholder="Enter shop name">
+                                </div>
+                                <div class="question-group">
+                                    <label class="question-label" for="shop_location_${index}">Location</label>
+                                    <input type="text" id="shop_location_${index}" name="shop_location_${index}" class="text-input" placeholder="Enter location/address">
+                                </div>
+                                <div class="question-group">
+                                    <label class="question-label" for="preference_reason_${index}">Why do you prefer this auto shop?</label>
+                                    <input type="text" id="preference_reason_${index}" name="preference_reason_${index}" class="text-input" placeholder="e.g., Great service, fair prices, convenient location">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="question-group">
+                            <label class="question-label">When is your next scheduled maintenance (if any)?</label>
+                            <div class="toggle-group">
+                                <label class="toggle-option">
+                                    <input type="radio" name="next_maintenance_${index}" value="instantly">
+                                    Needed Now
+                                </label>
+                                <label class="toggle-option">
+                                    <input type="radio" name="next_maintenance_${index}" value="1_month">
+                                    In 1 Month
+                                </label>
+                                <label class="toggle-option">
+                                    <input type="radio" name="next_maintenance_${index}" value="2_months">
+                                    In 2 Months
+                                </label>
+                                <label class="toggle-option">
+                                    <input type="radio" name="next_maintenance_${index}" value="3_months">
+                                    In 3 Months
+                                </label>
+                                <label class="toggle-option">
+                                    <input type="radio" name="next_maintenance_${index}" value="6_months">
+                                    In 6 Months
+                                </label>
+                            </div>
+                        </div>
+                        <div class="question-group">
+                            <label class="question-label">Would you like help keeping track of future checkups and reminders?</label>
+                            <div class="toggle-group">
+                                <label class="toggle-option">
+                                    <input type="radio" name="tracking_help_${index}" value="yes">
+                                    Yes
+                                </label>
+                                <label class="toggle-option">
+                                    <input type="radio" name="tracking_help_${index}" value="no">
+                                    No
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            ${index > 1 ? '<button type="button" class="remove-vehicle-btn" style="margin:16px 0 0 0;">Remove Vehicle</button>' : ''}
+        </div>
+        `;
+    }
+
+    // Helper to get the next vehicle index
+    function getNextVehicleIndex() {
+        const forms = vehicleFormsContainer.querySelectorAll('.vehicle-form');
+        return forms.length + 1;
+    }
+
+    // Add event listeners for mechanic details toggle in a vehicle form
+    function setupMechanicToggleForForm(form) {
+        const yesRadio = form.querySelector('.mechanic-yes');
+        const noRadio = form.querySelector('.mechanic-no');
+        const details = form.querySelector('.mechanic-details');
+        if (!yesRadio || !noRadio || !details) return;
+        function toggle() {
+            if (yesRadio.checked) {
+                details.style.display = 'block';
             } else {
-                mechanicDetails.classList.remove('active');
+                details.style.display = 'none';
             }
         }
+        yesRadio.addEventListener('change', toggle);
+        noRadio.addEventListener('change', toggle);
+    }
 
-        mechanicYes.addEventListener('change', toggleMechanicDetails);
-        mechanicNo.addEventListener('change', toggleMechanicDetails);
-
-        // Form validation
-        const form = document.getElementById('vehicleSurvey');
-        const requiredFields = ['make', 'model', 'year', 'mileage'];
-
-        function validateField(fieldName) {
-            const field = document.getElementById(fieldName);
-            const errorMessage = field.nextElementSibling;
-            
-            if (!field.value.trim()) {
-                field.classList.add('error');
-                errorMessage.classList.add('show');
-                return false;
-            } else {
-                field.classList.remove('error');
-                errorMessage.classList.remove('show');
-                return true;
-            }
+    // Add event listener for remove button
+    function setupRemoveButtonForForm(form) {
+        const removeBtn = form.querySelector('.remove-vehicle-btn');
+        if (removeBtn) {
+            removeBtn.addEventListener('click', function() {
+                form.remove();
+            });
         }
+    }
 
-        // Real-time validation
-        requiredFields.forEach(fieldName => {
-            const field = document.getElementById(fieldName);
-            field.addEventListener('blur', () => validateField(fieldName));
-            field.addEventListener('input', () => {
-                if (field.value.trim()) {
-                    field.classList.remove('error');
-                    field.nextElementSibling.classList.remove('show');
-                }
-            });
+    // Add a new vehicle form
+    function addVehicleForm() {
+        const index = getNextVehicleIndex();
+        const wrapper = document.createElement('div');
+        wrapper.innerHTML = getVehicleFormHTML(index);
+        const form = wrapper.firstElementChild;
+        vehicleFormsContainer.appendChild(form);
+        setupMechanicToggleForForm(form);
+        setupRemoveButtonForForm(form);
+    }
+
+    // Initial setup for the first form
+    setupMechanicToggleForForm(vehicleFormsContainer.querySelector('.vehicle-form'));
+
+    // Add vehicle button click
+    if (addVehicleBtn) {
+        addVehicleBtn.addEventListener('click', function() {
+            addVehicleForm();
         });
-
-        // Form submission
-        form.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            let isValid = true;
-            requiredFields.forEach(fieldName => {
-                if (!validateField(fieldName)) {
-                    isValid = false;
-                }
-            });
-
-            if (isValid) {
-                // Collect form data
-                const formData = new FormData(form);
-                const surveyData = Object.fromEntries(formData);
-                
-                // Show success message
-                const submitBtn = document.querySelector('.submit-btn');
-                const originalText = submitBtn.innerHTML;
-                submitBtn.innerHTML = '<i class="fas fa-check"></i> Survey Submitted!';
-                submitBtn.style.background = '#28a745';
-                submitBtn.disabled = true;
-
-                // Log the data (in real app, send to server)
-                console.log('Survey Data:', surveyData);
-                
-                // Reset after 3 seconds (for demo)
-                setTimeout(() => {
-                    submitBtn.innerHTML = originalText;
-                    submitBtn.style.background = '';
-                    submitBtn.disabled = false;
-                    alert('Thank you for completing the vehicle survey! Your responses have been recorded.');
-                }, 3000);
-            } else {
-                // Scroll to first error
-                const firstError = document.querySelector('.text-input.error, .number-input.error');
-                if (firstError) {
-                    firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                    firstError.focus();
-                }
-            }
-        });
-
-        // Year field validation
-        const yearField = document.getElementById('year');
-        yearField.addEventListener('input', function() {
-            const currentYear = new Date().getFullYear();
-            if (this.value && (this.value < 1990 || this.value > currentYear + 1)) {
-                this.classList.add('error');
-                this.nextElementSibling.textContent = `Please enter a year between 1990 and ${currentYear + 1}`;
-                this.nextElementSibling.classList.add('show');
-            } else if (this.value) {
-                this.classList.remove('error');
-                this.nextElementSibling.classList.remove('show');
-            }
-        });
-    });
+    }
 });
 
 function initializeCalculator() {
@@ -868,6 +1134,9 @@ function initializeCalculator() {
     
     // Initialize FAQ functionality
     setupFAQ();
+
+    // Load personal lines for times saved
+    loadTimeSavedBenefits();
 }
 
 function setupEventListeners() {
@@ -1018,37 +1287,49 @@ function setupAutomobileListeners() {
 }
 
 function setupAutomobileToggle() {
-    const automobileHeader = document.getElementById('automobile-header');
-    const automobileToggle = document.getElementById('automobile-toggle');
+    console.log('Setting up automobile toggle...');
+    
+    const automobileHeader = document.querySelector('.automobile-section .section-header');
     const automobileContent = document.getElementById('automobile-content');
     const automobileSection = document.querySelector('.automobile-section');
+    
+    console.log('Header found:', automobileHeader);
+    console.log('Content found:', automobileContent);
+    console.log('Section found:', automobileSection);
 
     function toggleAutomobileSection() {
+        console.log('Toggle function called!');
+        
+        if (!automobileContent) {
+            console.log('No automobile content found');
+            return;
+        }
+        
         const isActive = automobileContent.classList.contains('active');
+        console.log('Is active:', isActive);
         
         if (isActive) {
             // Hide the section
             automobileContent.classList.remove('active');
-            automobileToggle.classList.remove('active');
-            automobileSection.classList.remove('expanded');
+            if (automobileSection) automobileSection.classList.remove('expanded');
+            console.log('Hiding section');
         } else {
             // Show the section
             automobileContent.classList.add('active');
-            automobileToggle.classList.add('active');
-            automobileSection.classList.add('expanded');
+            if (automobileSection) automobileSection.classList.add('expanded');
+            console.log('Showing section');
         }
     }
 
-    // Add click listeners to both header and toggle
+    // Add click listener to the entire header
     if (automobileHeader) {
-        automobileHeader.addEventListener('click', toggleAutomobileSection);
-    }
-    
-    if (automobileToggle) {
-        automobileToggle.addEventListener('click', function(e) {
-            e.stopPropagation(); // Prevent double-clicking when clicking the toggle directly
+        console.log('Adding click listener to header');
+        automobileHeader.addEventListener('click', function(e) {
+            console.log('Header clicked!', e);
             toggleAutomobileSection();
         });
+    } else {
+        console.log('No header found to attach listener to');
     }
 }
 
@@ -1348,6 +1629,9 @@ function updateSummary() {
     if (downloadBtn) {
         downloadBtn.disabled = selectedTasks.size === 0;
     }
+
+    // Display time saved benefits
+    displayTimeSavedBenefits(frequencyAdjusted.monthlyHours);
 }
 
 function updateComparisonTable(diyTime, diyCost, marketCost, jamiezCost, taskCount, recommendedPlan, frequencyAdjusted) {
@@ -1899,9 +2183,9 @@ function downloadReport() {
 
     // Update currentY after savings table
     if (doc.lastAutoTable && typeof doc.lastAutoTable.finalY === 'number') {
-        currentY = doc.lastAutoTable.finalY + 15;
+        currentY = doc.lastAutoTable.finalY + 18;
     } else {
-        currentY += 25;
+        currentY += 18;
     }
 
     // --- Summary Section ---
@@ -1909,6 +2193,37 @@ function downloadReport() {
         doc.addPage();
         addFooter(doc);
         currentY = 20;
+    }
+
+    // --- What This Time Could Mean for You Box ---
+    // Calculate the benefit message
+    const demographicCategory = getUserDemographicCategory();
+    const benefitMessage = (demographicCategory && timeSavedBenefitsData[demographicCategory])
+        ? getTimeSavedBenefit(Math.round(monthlyTime), demographicCategory)
+        : null;
+    if (benefitMessage) {
+        // Box styling (matching CSS: green border, light bg, rounded corners)
+        const benefitBoxX = 20;
+        const benefitBoxY = currentY;
+        const benefitBoxWidth = 170;
+        const benefitBoxHeight = 35;
+        // Draw box
+        doc.setFillColor(248, 249, 250); // #f8f9fa
+        doc.setDrawColor(40, 167, 69); // #28a745
+        doc.setLineWidth(1);
+        doc.roundedRect(benefitBoxX, benefitBoxY, benefitBoxWidth, benefitBoxHeight, 4, 4, 'FD');
+        // Heading
+        doc.setFont('helvetica', 'bold');
+        doc.setFontSize(13);
+        doc.setTextColor(40, 167, 69); // #28a745
+        const headingText = 'What This Time Could Mean for You';
+        doc.text(headingText, benefitBoxX + 6, benefitBoxY + 12, { maxWidth: benefitBoxWidth - 12 });
+        // Message
+        doc.setFont('helvetica', 'normal');
+        doc.setFontSize(11);
+        doc.setTextColor(73, 80, 87); // #495057
+        doc.text(benefitMessage, benefitBoxX + 6, benefitBoxY + 22, { maxWidth: benefitBoxWidth - 12 });
+        currentY = benefitBoxY + benefitBoxHeight + 18;
     }
 
     // Create rectangular box for recommended plan
@@ -1926,7 +2241,7 @@ function downloadReport() {
     // Add plan information inside the box
     doc.setTextColor(255, 255, 255); // White text
     doc.setFont('helvetica', 'bold');
-    doc.setFontSize(22);
+    doc.setFontSize(18);
 
     // Plan name - centered horizontally
     const planNameText = `Recommended Plan: ${recommendedPlan.name}`;
@@ -1995,4 +2310,97 @@ function downloadReport() {
     
     // Save the PDF
     doc.save('jamiez-task-report.pdf');
+}
+
+// Function to determine user demographic category
+function getUserDemographicCategory() {
+    const ageGroup = document.getElementById('age_group')?.value;
+    const hasChildren = document.querySelector('input[name="children-teens"]:checked')?.value;
+    
+    // Check if age group indicates retirement
+    if (['60-69', '70-79', '80+'].includes(ageGroup)) {
+        return 'Retired Individuals';
+    }
+    
+    // Check if age group indicates working professional
+    if (['25-34', '35-44', '45-55'].includes(ageGroup)) {
+        if (hasChildren === 'yes') {
+            return 'Busy Professionals with Kids';
+        } else if (hasChildren === 'no' || hasChildren === 'prefer-not-to-say') {
+            return 'Busy Professionals without Kids';
+        }
+    }
+    
+    // Default fallback
+    return null;
+}
+
+// Function to get the closest time saved benefit message
+function getTimeSavedBenefit(hoursPerMonth, category) {
+    if (!timeSavedBenefitsData[category]) {
+        return null;
+    }
+    
+    const availableHours = Object.keys(timeSavedBenefitsData[category])
+        .map(h => parseInt(h))
+        .sort((a, b) => a - b);
+    
+    // Find the closest hour value that's <= hoursPerMonth
+    let closestHour = availableHours[0]; // Default to smallest
+    
+    for (let hour of availableHours) {
+        if (hour <= hoursPerMonth) {
+            closestHour = hour;
+        } else {
+            break;
+        }
+    }
+    
+    return timeSavedBenefitsData[category][closestHour];
+}
+
+// Function to display time saved benefits
+function displayTimeSavedBenefits(hoursPerMonth) {
+    const category = getUserDemographicCategory();
+    
+    if (!category || !timeSavedBenefitsData[category]) {
+        // Remove any existing benefits section
+        const existingBenefits = document.querySelector('.time-saved-benefits');
+        if (existingBenefits) {
+            existingBenefits.remove();
+        }
+        return;
+    }
+    
+    const benefitMessage = getTimeSavedBenefit(Math.round(hoursPerMonth), category);
+    
+    if (benefitMessage) {
+        // Remove any existing benefits section
+        const existingBenefits = document.querySelector('.time-saved-benefits');
+        if (existingBenefits) {
+            existingBenefits.remove();
+        }
+        
+        // Create new benefits section
+        const benefitsSection = document.createElement('div');
+        benefitsSection.className = 'time-saved-benefits';
+        benefitsSection.innerHTML = `
+            <div class="benefits-content">
+                <h3>💡 What This Time Could Mean for You</h3>
+                <p class="benefit-message">${benefitMessage}</p>
+            </div>
+        `;
+        
+        // Insert after the savings highlight section
+        const savingsHighlight = document.querySelector('.savings-highlight');
+        if (savingsHighlight && savingsHighlight.parentNode) {
+            savingsHighlight.parentNode.insertBefore(benefitsSection, savingsHighlight.nextSibling);
+        }
+    }
+}
+
+// Add this function to resolve the ReferenceError
+function loadTimeSavedBenefits() {
+    // Optionally, you can pass 0 or the current hours per month if available
+    displayTimeSavedBenefits(0);
 }

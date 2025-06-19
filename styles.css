@@ -205,7 +205,9 @@ body {
     position: relative;
     cursor: pointer;
     user-select: none;
-    padding: 20px 0;
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .automobile-section .section-header h2 {
@@ -234,7 +236,7 @@ body {
     background: rgba(135, 163, 236, 0.1);
     width: 40px;
     height: 40px;
-    display: flex;
+    display: none; /* Hide the toggle button */
     align-items: center;
     justify-content: center;
 }
@@ -254,15 +256,14 @@ body {
 
 /* Automobile content hidden by default */
 .automobile-content {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.5s ease, padding 0.5s ease;
-    padding: 0;
+    display: none;
+    transition: all 0.3s ease;
 }
 
 .automobile-content.active {
-    max-height: 2000px; /* Adjust based on your content height */
+    display: block;
     padding-top: 30px;
+    animation: fadeIn 0.3s ease-out;
 }
 
 /* Update the automobile section header when expanded */
@@ -439,11 +440,11 @@ body {
     border-radius: 12px;
     border-left: 4px solid #87a3ec;
     display: none;
-    animation: fadeIn 0.3s ease-out;
 }
 
 .conditional-content.active {
     display: block;
+    animation: fadeIn 0.3s ease-out;
 }
 
 .conditional-content .question-group {
@@ -1058,7 +1059,7 @@ body {
 
 /* Comparison Table */
 .comparison-table {
-    margin-bottom: 50px;
+    margin-bottom: 35px;
     background: white;
     border-radius: 16px;
     overflow: hidden;
@@ -1118,7 +1119,7 @@ body {
     padding: 32px 20px;
     border-radius: 18px;
     text-align: center;
-    margin-bottom: 100px;
+    margin-bottom: 35px;
     box-shadow: 0 2px 12px rgba(102, 126, 234, 0.10);
 }
 
@@ -1711,4 +1712,82 @@ body {
     100% {
         transform: scale(1);
     }
+}
+
+/* Time Saved Benefits Section */
+.time-saved-benefits {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border: 2px solid #28a745;
+    border-radius: 18px;
+    padding: 25px;
+    margin-bottom: 100px;
+    box-shadow: 0 4px 15px rgba(40, 167, 69, 0.15);
+}
+
+.benefits-content h3 {
+    color: #28a745;
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.benefits-content h3 i {
+    font-size: 1.2rem;
+}
+
+.benefit-message {
+    color: #495057;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    font-style: italic;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .time-saved-benefits {
+        padding: 20px;
+        margin: 24px 0 36px 0;
+    }
+    
+    .benefits-content h3 {
+        font-size: 1.2rem;
+    }
+    
+    .benefit-message {
+        font-size: 1rem;
+    }
+}
+
+.vehicle-btn-row {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 16px;
+    margin-bottom: 8px;
+}
+
+.add-vehicle-btn {
+    background: linear-gradient(135deg, #667eea 0%, #7ea4f1 100%);
+    color: white;
+    border: none;
+    padding: 14px 32px;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.15);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.add-vehicle-btn:hover {
+    background: linear-gradient(135deg, #7ea4f1 0%, #667eea 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(102, 126, 234, 0.25);
+}
+.add-vehicle-btn i {
+    font-size: 1.2rem;
 }
