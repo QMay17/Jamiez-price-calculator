@@ -962,17 +962,19 @@ body {
 .task-tooltip {
     color: #87a3ec;
     cursor: help;
-    position: absolute;
-    right: 15px;
-    top: 15px;
+    position: relative;
+    right: unset;
+    top: unset;
+    display: inline-block;
+    vertical-align: middle;
     z-index: 1000;
 }
 
 .task-tooltip:hover::after {
     content: attr(data-tooltip);
     position: absolute;
-    top: calc(100% + 15px);
-    right: 0%;
+    right: 100%;
+    bottom: 0;
     transform: none;
     background: #333;
     color: white;
@@ -996,12 +998,12 @@ body {
 .task-tooltip:hover::before {
     content: "";
     position: absolute;
-    top: calc(100% + 8px);
-    right: 15px;
+    left: 110%;
+    bottom: 12px;
     transform: none;
     border: 8px solid transparent;
-    border-top-color: transparent;
-    border-bottom-color: #333;
+    border-right-color: #333;
+    border-left: none;
     z-index: 9999;
 }
 

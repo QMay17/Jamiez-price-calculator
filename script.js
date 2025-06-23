@@ -2,15 +2,15 @@
 const taskData = {
     'front-yard': [
         {
-            id: 'lawn-irrigation',
-            name: 'Lawn (irrigation system / sprinkler heads)',
-            time: '1–2 hours',
-            timeHours: 1.5,
-            cost: '$50–$100',
-            costAmount: 75,
-            frequency: 'weekly',
-            difficulty: 'medium',
-            tooltip: 'Regular lawn care including irrigation system maintenance and sprinkler head adjustments'
+            id: 'address-numbers',
+            name: 'Address numbers (visible & lit)',
+            time: '0.5 hour',
+            timeHours: 0.5,
+            cost: '$40–$60',
+            costAmount: 50,
+            frequency: 'quarterly',
+            difficulty: 'easy',
+            tooltip: 'Ensuring address numbers are clearly visible and properly illuminated'
         },
         {
             id: 'flower-beds-shrubs',
@@ -24,17 +24,6 @@ const taskData = {
             tooltip: 'Pruning, weeding, and seasonal care for decorative landscaping elements'
         },
         {
-            id: 'trees-pruning',
-            name: 'Trees (fruit, shade, pruning needs)',
-            time: '2–4 hours',
-            timeHours: 3,
-            cost: '$150–$300',
-            costAmount: 225,
-            frequency: 'seasonal',
-            difficulty: 'hard',
-            tooltip: 'Professional tree care including pruning, health assessment, and seasonal maintenance'
-        },
-        {
             id: 'landscape-lighting',
             name: 'Landscape Lighting',
             time: '1–2 hours',
@@ -44,6 +33,17 @@ const taskData = {
             frequency: 'monthly',
             difficulty: 'medium',
             tooltip: 'Installation, repair, and maintenance of landscape lighting systems'
+        },
+        {
+            id: 'lawn-irrigation',
+            name: 'Lawn (irrigation system / sprinkler heads)',
+            time: '1–2 hours',
+            timeHours: 1.5,
+            cost: '$50–$100',
+            costAmount: 75,
+            frequency: 'weekly',
+            difficulty: 'medium',
+            tooltip: 'Regular lawn care including irrigation system maintenance and sprinkler head adjustments'
         },
         {
             id: 'mailbox-condition',
@@ -57,15 +57,26 @@ const taskData = {
             tooltip: 'Mailbox condition assessment, lock maintenance, and security upgrades'
         },
         {
-            id: 'address-numbers',
-            name: 'Address numbers (visible & lit)',
-            time: '0.5 hour',
-            timeHours: 0.5,
-            cost: '$40–$60',
-            costAmount: 50,
+            id: 'smart-irrigation',
+            name: 'Smart irrigation controller',
+            time: '1 hour',
+            timeHours: 1,
+            cost: '$75–$120',
+            costAmount: 97.5,
             frequency: 'quarterly',
-            difficulty: 'easy',
-            tooltip: 'Ensuring address numbers are clearly visible and properly illuminated'
+            difficulty: 'medium',
+            tooltip: 'Installation, programming, and maintenance of smart irrigation controllers'
+        },
+        {
+            id: 'trees-pruning',
+            name: 'Trees (fruit, shade, pruning needs)',
+            time: '2–4 hours',
+            timeHours: 3,
+            cost: '$150–$300',
+            costAmount: 225,
+            frequency: 'seasonal',
+            difficulty: 'hard',
+            tooltip: 'Professional tree care including pruning, health assessment, and seasonal maintenance'
         },
         {
             id: 'water-features',
@@ -77,20 +88,21 @@ const taskData = {
             frequency: 'monthly',
             difficulty: 'medium',
             tooltip: 'Water feature cleaning, pump maintenance, and seasonal care'
-        },
-        {
-            id: 'smart-irrigation',
-            name: 'Smart irrigation controller',
-            time: '1 hour',
-            timeHours: 1,
-            cost: '$75–$120',
-            costAmount: 97.5,
-            frequency: 'quarterly',
-            difficulty: 'medium',
-            tooltip: 'Installation, programming, and maintenance of smart irrigation controllers'
         }
     ],
+
     'side-yards': [
+        {
+            id: 'ac-condenser',
+            name: 'A/C condenser units (clean, accessible)',
+            time: '1 hour',
+            timeHours: 1,
+            cost: '$60–$100',
+            costAmount: 80,
+            frequency: 'seasonal',
+            difficulty: 'medium',
+            tooltip: 'AC condenser unit cleaning, accessibility checks, and basic maintenance'
+        },
         {
             id: 'access-gate',
             name: 'Access gate working',
@@ -101,17 +113,6 @@ const taskData = {
             frequency: 'monthly',
             difficulty: 'medium',
             tooltip: 'Gate hardware adjustment, hinge lubrication, and repair services'
-        },
-        {
-            id: 'trash-recycling',
-            name: 'Trash & recycling storage',
-            time: '0.5 hour',
-            timeHours: 0.5,
-            cost: '$40–$60',
-            costAmount: 50,
-            frequency: 'weekly',
-            difficulty: 'easy',
-            tooltip: 'Cleanup and organization of trash and recycling storage areas'
         },
         {
             id: 'hose-bibs',
@@ -125,15 +126,15 @@ const taskData = {
             tooltip: 'Hose bib replacement, repair, and winterization services'
         },
         {
-            id: 'ac-condenser',
-            name: 'A/C condenser units (clean, accessible)',
-            time: '1 hour',
-            timeHours: 1,
-            cost: '$60–$100',
-            costAmount: 80,
-            frequency: 'seasonal',
-            difficulty: 'medium',
-            tooltip: 'AC condenser unit cleaning, accessibility checks, and basic maintenance'
+            id: 'trash-recycling',
+            name: 'Trash & recycling storage',
+            time: '0.5 hour',
+            timeHours: 0.5,
+            cost: '$40–$60',
+            costAmount: 50,
+            frequency: 'weekly',
+            difficulty: 'easy',
+            tooltip: 'Cleanup and organization of trash and recycling storage areas'
         },
         {
             id: 'utility-meters',
@@ -147,18 +148,8 @@ const taskData = {
             tooltip: 'Ensuring utility meters are accessible and protected (coordination with utility companies)'
         }
     ],
+
     'back-yard': [
-        {
-            id: 'fence-damage',
-            name: 'Fence (damage, latches)',
-            time: '1–2 hours',
-            timeHours: 1.5,
-            cost: '$75–$200',
-            costAmount: 137.5,
-            frequency: 'monthly',
-            difficulty: 'medium',
-            tooltip: 'Fence damage repair, gate latch adjustment, and structural assessment'
-        },
         {
             id: 'deck-patio',
             name: 'Deck or Patio (clean/inspect)',
@@ -169,61 +160,6 @@ const taskData = {
             frequency: 'monthly',
             difficulty: 'medium',
             tooltip: 'Deck cleaning, inspection for damage, and maintenance recommendations'
-        },
-        {
-            id: 'patio-cover',
-            name: 'Patio Cover / Pergola',
-            time: '1–2 hours',
-            timeHours: 1.5,
-            cost: '$150–$500',
-            costAmount: 325,
-            frequency: 'quarterly',
-            difficulty: 'hard',
-            tooltip: 'Patio cover cleaning, structural inspection, and weather protection maintenance'
-        },
-        {
-            id: 'outdoor-kitchen',
-            name: 'Outdoor kitchen / BBQ',
-            time: '1 hour',
-            timeHours: 1,
-            cost: '$75–$150',
-            costAmount: 112.5,
-            frequency: 'monthly',
-            difficulty: 'medium',
-            tooltip: 'BBQ cleaning, outdoor kitchen maintenance, and gas line inspection'
-        },
-        {
-            id: 'misters-fans',
-            name: 'Misters / Cooling Fans',
-            time: '0.5–1 hour',
-            timeHours: 0.75,
-            cost: '$50–$100',
-            costAmount: 75,
-            frequency: 'seasonal',
-            difficulty: 'medium',
-            tooltip: 'Misting system cleaning, fan maintenance, and seasonal setup'
-        },
-        {
-            id: 'fire-pit',
-            name: 'Fire Pit',
-            time: '0.5–1 hour',
-            timeHours: 0.75,
-            cost: '$75–$150',
-            costAmount: 112.5,
-            frequency: 'seasonal',
-            difficulty: 'medium',
-            tooltip: 'Fire pit cleaning, safety inspection, and fuel management'
-        },
-        {
-            id: 'outdoor-heaters',
-            name: 'Outdoor heaters',
-            time: '0.5–1 hour',
-            timeHours: 0.75,
-            cost: '$75–$125',
-            costAmount: 100,
-            frequency: 'seasonal',
-            difficulty: 'medium',
-            tooltip: 'Outdoor heater cleaning, gas line inspection, and safety maintenance'
         },
         {
             id: 'drainage-issues',
@@ -237,15 +173,26 @@ const taskData = {
             tooltip: 'Drainage system evaluation and solutions for water pooling problems'
         },
         {
-            id: 'pet-area',
-            name: 'Pet damage / pet area',
-            time: '1 hour',
-            timeHours: 1,
-            cost: '$50–$150',
-            costAmount: 100,
-            frequency: 'biweekly',
-            difficulty: 'easy',
-            tooltip: 'Pet area cleanup, damage assessment, and maintenance solutions'
+            id: 'fence-damage',
+            name: 'Fence (damage, latches)',
+            time: '1–2 hours',
+            timeHours: 1.5,
+            cost: '$75–$200',
+            costAmount: 137.5,
+            frequency: 'monthly',
+            difficulty: 'medium',
+            tooltip: 'Fence damage repair, gate latch adjustment, and structural assessment'
+        },
+        {
+            id: 'fire-pit',
+            name: 'Fire Pit',
+            time: '0.5–1 hour',
+            timeHours: 0.75,
+            cost: '$75–$150',
+            costAmount: 112.5,
+            frequency: 'seasonal',
+            difficulty: 'medium',
+            tooltip: 'Fire pit cleaning, safety inspection, and fuel management'
         },
         {
             id: 'fruit-trees',
@@ -259,6 +206,61 @@ const taskData = {
             tooltip: 'Fruit tree pruning, harvest coordination, and garden maintenance'
         },
         {
+            id: 'misters-fans',
+            name: 'Misters / Cooling Fans',
+            time: '0.5–1 hour',
+            timeHours: 0.75,
+            cost: '$50–$100',
+            costAmount: 75,
+            frequency: 'seasonal',
+            difficulty: 'medium',
+            tooltip: 'Misting system cleaning, fan maintenance, and seasonal setup'
+        },
+        {
+            id: 'outdoor-heaters',
+            name: 'Outdoor heaters',
+            time: '0.5–1 hour',
+            timeHours: 0.75,
+            cost: '$75–$125',
+            costAmount: 100,
+            frequency: 'seasonal',
+            difficulty: 'medium',
+            tooltip: 'Outdoor heater cleaning, gas line inspection, and safety maintenance'
+        },
+        {
+            id: 'outdoor-kitchen',
+            name: 'Outdoor kitchen / BBQ',
+            time: '1 hour',
+            timeHours: 1,
+            cost: '$75–$150',
+            costAmount: 112.5,
+            frequency: 'monthly',
+            difficulty: 'medium',
+            tooltip: 'BBQ cleaning, outdoor kitchen maintenance, and gas line inspection'
+        },
+        {
+            id: 'patio-cover',
+            name: 'Patio Cover / Pergola',
+            time: '1–2 hours',
+            timeHours: 1.5,
+            cost: '$150–$500',
+            costAmount: 325,
+            frequency: 'quarterly',
+            difficulty: 'hard',
+            tooltip: 'Patio cover cleaning, structural inspection, and weather protection maintenance'
+        },
+        {
+            id: 'pet-area',
+            name: 'Pet damage / pet area',
+            time: '1 hour',
+            timeHours: 1,
+            cost: '$50–$150',
+            costAmount: 100,
+            frequency: 'biweekly',
+            difficulty: 'easy',
+            tooltip: 'Pet area cleanup, damage assessment, and maintenance solutions'
+        },
+        {
             id: 'water-barrels',
             name: 'Water barrels / greywater',
             time: '0.5–1 hour',
@@ -270,7 +272,19 @@ const taskData = {
             tooltip: 'Water barrel maintenance and greywater system management'
         }
     ],
+
     'outdoor-furniture': [
+        {
+            id: 'hot-tub-pool',
+            name: 'Hot tub / Pool',
+            time: '1–2 hours',
+            timeHours: 1.5,
+            cost: '$150–$250/month',
+            costAmount: 200,
+            frequency: 'weekly',
+            difficulty: 'hard',
+            tooltip: 'Regular pool/hot tub cleaning, chemical balancing, and equipment maintenance'
+        },
         {
             id: 'outdoor-furniture-clean',
             name: 'Outdoor furniture (clean)',
@@ -281,17 +295,6 @@ const taskData = {
             frequency: 'monthly',
             difficulty: 'easy',
             tooltip: 'Cleaning and maintenance of patio furniture and cushions'
-        },
-        {
-            id: 'umbrellas-shade',
-            name: 'Umbrellas / shade structures',
-            time: '0.5 hour',
-            timeHours: 0.5,
-            cost: '$40–$80',
-            costAmount: 60,
-            frequency: 'monthly',
-            difficulty: 'easy',
-            tooltip: 'Umbrella cleaning, repair, and shade structure maintenance'
         },
         {
             id: 'storage-shed',
@@ -305,6 +308,17 @@ const taskData = {
             tooltip: 'Storage shed organization, weatherproofing, and maintenance'
         },
         {
+            id: 'pool-safety',
+            name: 'Pool safety fence / alarm',
+            time: '0.5–1 hour',
+            timeHours: 0.75,
+            cost: '$150–$300',
+            costAmount: 225,
+            frequency: 'monthly',
+            difficulty: 'medium',
+            tooltip: 'Pool safety fence inspection, alarm testing, and compliance checks'
+        },
+        {
             id: 'toys-swings',
             name: 'Toys / swing sets',
             time: '1–2 hours',
@@ -316,40 +330,19 @@ const taskData = {
             tooltip: 'Swing set inspection, toy organization, and safety maintenance'
         },
         {
-            id: 'hot-tub-pool',
-            name: 'Hot tub / Pool',
-            time: '1–2 hours',
-            timeHours: 1.5,
-            cost: '$150–$250/month',
-            costAmount: 200,
-            frequency: 'weekly',
-            difficulty: 'hard',
-            tooltip: 'Regular pool/hot tub cleaning, chemical balancing, and equipment maintenance'
-        },
-        {
-            id: 'pool-safety',
-            name: 'Pool safety fence / alarm',
-            time: '0.5–1 hour',
-            timeHours: 0.75,
-            cost: '$150–$300',
-            costAmount: 225,
+            id: 'umbrellas-shade',
+            name: 'Umbrellas / shade structures',
+            time: '0.5 hour',
+            timeHours: 0.5,
+            cost: '$40–$80',
+            costAmount: 60,
             frequency: 'monthly',
-            difficulty: 'medium',
-            tooltip: 'Pool safety fence inspection, alarm testing, and compliance checks'
+            difficulty: 'easy',
+            tooltip: 'Umbrella cleaning, repair, and shade structure maintenance'
         }
     ],
+
     'garage': [
-        {
-            id: 'overhead-storage',
-            name: 'Overhead storage / racks',
-            time: '1–2 hours',
-            timeHours: 1.5,
-            cost: '$100–$250',
-            costAmount: 175,
-            frequency: 'quarterly',
-            difficulty: 'medium',
-            tooltip: 'Overhead storage rack installation and garage organization systems'
-        },
         {
             id: 'electrical-lighting',
             name: 'Electrical outlets / lighting',
@@ -373,17 +366,6 @@ const taskData = {
             tooltip: 'EV charger installation prep, electrical assessment, and permit coordination'
         },
         {
-            id: 'tools-storage',
-            name: 'Tools & equipment storage',
-            time: '1–2 hours',
-            timeHours: 1.5,
-            cost: '$50–$150',
-            costAmount: 100,
-            frequency: 'monthly',
-            difficulty: 'easy',
-            tooltip: 'Tool organization systems and equipment storage optimization'
-        },
-        {
             id: 'garage-laundry',
             name: 'Laundry appliances (garage)',
             time: '1 hour',
@@ -395,6 +377,17 @@ const taskData = {
             tooltip: 'Garage-based laundry appliance maintenance and utility connections'
         },
         {
+            id: 'overhead-storage',
+            name: 'Overhead storage / racks',
+            time: '1–2 hours',
+            timeHours: 1.5,
+            cost: '$100–$250',
+            costAmount: 175,
+            frequency: 'quarterly',
+            difficulty: 'medium',
+            tooltip: 'Overhead storage rack installation and garage organization systems'
+        },
+        {
             id: 'pest-check',
             name: 'Pest activity check',
             time: '0.5 hour',
@@ -404,19 +397,42 @@ const taskData = {
             frequency: 'monthly',
             difficulty: 'easy',
             tooltip: 'Pest activity assessment and preventive control measures'
+        },
+        {
+            id: 'tools-storage',
+            name: 'Tools & equipment storage',
+            time: '1–2 hours',
+            timeHours: 1.5,
+            cost: '$50–$150',
+            costAmount: 100,
+            frequency: 'monthly',
+            difficulty: 'easy',
+            tooltip: 'Tool organization systems and equipment storage optimization'
         }
     ],
+
     'exterior': [
         {
-            id: 'roof-inspection',
-            name: 'Roof (age, material, visible damage)',
-            time: '1 hour',
-            timeHours: 1,
+            id: 'chimney-flue',
+            name: 'Chimney / Flue',
+            time: '0.5–1 hour',
+            timeHours: 0.75,
             cost: '$150–$300',
             costAmount: 225,
             frequency: 'seasonal',
             difficulty: 'hard',
-            tooltip: 'Professional roof inspection for age, material condition, and visible damage'
+            tooltip: 'Chimney inspection, flue cleaning coordination, and safety assessment'
+        },
+        {
+            id: 'exterior-cameras',
+            name: 'Exterior cameras / motion lights',
+            time: '1–2 hours',
+            timeHours: 1.5,
+            cost: '$100–$250',
+            frequency: 'monthly',
+            costAmount: 175,
+            difficulty: 'medium',
+            tooltip: 'Security camera cleaning, motion light testing, and system maintenance'
         },
         {
             id: 'gutters-downspouts',
@@ -430,6 +446,17 @@ const taskData = {
             tooltip: 'Gutter cleaning, debris removal, and downspout flow testing'
         },
         {
+            id: 'roof-inspection',
+            name: 'Roof (age, material, visible damage)',
+            time: '1 hour',
+            timeHours: 1,
+            cost: '$150–$300',
+            costAmount: 225,
+            frequency: 'seasonal',
+            difficulty: 'hard',
+            tooltip: 'Professional roof inspection for age, material condition, and visible damage'
+        },
+        {
             id: 'siding-paint',
             name: 'Siding / Stucco / Paint condition',
             time: '1–2 hours',
@@ -439,28 +466,6 @@ const taskData = {
             frequency: 'quarterly',
             difficulty: 'medium',
             tooltip: 'Siding inspection, stucco assessment, and paint condition evaluation'
-        },
-        {
-            id: 'chimney-flue',
-            name: 'Chimney / Flue',
-            time: '0.5–1 hour',
-            timeHours: 0.75,
-            cost: '$150–$300',
-            costAmount: 225,
-            frequency: 'seasonal',
-            difficulty: 'hard',
-            tooltip: 'Chimney inspection, flue cleaning coordination, and safety assessment'
-        },
-        {
-            id: 'windows-screens',
-            name: 'Windows / Screens',
-            time: '1–2 hours',
-            timeHours: 1.5,
-            cost: '$80–$150',
-            costAmount: 115,
-            frequency: 'quarterly',
-            difficulty: 'easy',
-            tooltip: 'Window cleaning, screen repair, and weatherstripping maintenance'
         },
         {
             id: 'skylights-solar',
@@ -485,17 +490,6 @@ const taskData = {
             tooltip: 'Solar panel visual inspection, cleaning coordination, and performance monitoring'
         },
         {
-            id: 'exterior-cameras',
-            name: 'Exterior cameras / motion lights',
-            time: '1–2 hours',
-            timeHours: 1.5,
-            cost: '$100–$250',
-            frequency: 'monthly',
-            costAmount: 175,
-            difficulty: 'medium',
-            tooltip: 'Security camera cleaning, motion light testing, and system maintenance'
-        },
-        {
             id: 'wifi-extender',
             name: 'Wi-Fi signal / mesh extender',
             time: '0.5–1 hour',
@@ -505,9 +499,32 @@ const taskData = {
             frequency: 'monthly',
             difficulty: 'medium',
             tooltip: 'Wi-Fi signal optimization, mesh extender setup, and network troubleshooting'
+        },
+        {
+            id: 'windows-screens',
+            name: 'Windows / Screens',
+            time: '1–2 hours',
+            timeHours: 1.5,
+            cost: '$80–$150',
+            costAmount: 115,
+            frequency: 'quarterly',
+            difficulty: 'easy',
+            tooltip: 'Window cleaning, screen repair, and weatherstripping maintenance'
         }
     ],
+
     'utilities': [
+        {
+            id: 'backup-generator',
+            name: 'Backup generator',
+            time: '1 hour',
+            timeHours: 1,
+            cost: '$150–$300',
+            costAmount: 225,
+            frequency: 'seasonal',
+            difficulty: 'hard',
+            tooltip: 'Generator maintenance, fuel management, and operational testing'
+        },
         {
             id: 'water-system',
             name: 'Drinking water system (filtration, softener)',
@@ -518,17 +535,6 @@ const taskData = {
             frequency: 'monthly',
             difficulty: 'medium',
             tooltip: 'Water filter replacement, softener maintenance, and system testing'
-        },
-        {
-            id: 'propane-tank',
-            name: 'Propane tank (BBQ, heater, fireplace)',
-            time: '0.5 hour',
-            timeHours: 0.5,
-            cost: '$50–$100',
-            costAmount: 75,
-            frequency: 'monthly',
-            difficulty: 'easy',
-            tooltip: 'Propane tank exchange, connection inspection, and safety checks'
         },
         {
             id: 'firewood-storage',
@@ -542,15 +548,26 @@ const taskData = {
             tooltip: 'Firewood stacking, storage organization, and pest prevention'
         },
         {
-            id: 'backup-generator',
-            name: 'Backup generator',
+            id: 'irrigation-controller',
+            name: 'Irrigation controller (manual, smart)',
             time: '1 hour',
             timeHours: 1,
-            cost: '$150–$300',
-            costAmount: 225,
-            frequency: 'seasonal',
-            difficulty: 'hard',
-            tooltip: 'Generator maintenance, fuel management, and operational testing'
+            cost: '$75–$150',
+            costAmount: 112.5,
+            frequency: 'quarterly',
+            difficulty: 'medium',
+            tooltip: 'Irrigation timer programming, seasonal adjustments, and system optimization'
+        },
+        {
+            id: 'propane-tank',
+            name: 'Propane tank (BBQ, heater, fireplace)',
+            time: '0.5 hour',
+            timeHours: 0.5,
+            cost: '$50–$100',
+            costAmount: 75,
+            frequency: 'monthly',
+            difficulty: 'easy',
+            tooltip: 'Propane tank exchange, connection inspection, and safety checks'
         },
         {
             id: 'rainwater-barrels',
@@ -562,30 +579,20 @@ const taskData = {
             frequency: 'quarterly',
             difficulty: 'medium',
             tooltip: 'Rainwater barrel cleaning, system maintenance, and mosquito prevention'
-        },
-        {
-            id: 'septic-sewer',
-            name: 'Septic system or city sewer',
-            time: '0.5 hour',
-            timeHours: 0.5,
-            cost: '$200–$500',
-            costAmount: 350,
-            frequency: 'seasonal',
-            difficulty: 'hard',
-            tooltip: 'Septic system inspection coordination and sewer line maintenance'
-        },
-        {
-            id: 'irrigation-controller',
-            name: 'Irrigation controller (manual, smart)',
-            time: '1 hour',
-            timeHours: 1,
-            cost: '$75–$150',
-            costAmount: 112.5,
-            frequency: 'quarterly',
-            difficulty: 'medium',
-            tooltip: 'Irrigation timer programming, seasonal adjustments, and system optimization'
         }
+        // {
+        //     id: 'septic-sewer',
+        //     name: 'Septic system or city sewer',
+        //     time: '0.5 hour',
+        //     timeHours: 0.5,
+        //     cost: '$200–$500',
+        //     costAmount: 350,
+        //     frequency: 'seasonal',
+        //     difficulty: 'hard',
+        //     tooltip: 'Septic system inspection coordination and sewer line maintenance'
+        // }
     ],
+
     'pet-care': [
         {
             id: 'dog-walking',
@@ -632,6 +639,7 @@ const taskData = {
             tooltip: 'Safe pet transportation to appointments, grooming, and activities'
         }
     ],
+
     'pest-wildlife': [
         {
             id: 'rodent-insect',
@@ -645,17 +653,6 @@ const taskData = {
             tooltip: 'Locate signs of infestation, clean affected areas, and set traps or deterrents to prevent recurrence.'
         },
         {
-            id: 'spider-webs-nests',
-            name: 'Spider webs / nests',
-            time: '0.5-1 hours',
-            timeHours: 0.75,
-            cost: '$75-$150',
-            costAmount: 125,
-            frequency: 'biweekly',
-            difficulty: 'medium',
-            tooltip: 'Remove webs and nests from corners, eaves, and fixtures to maintain a clean and pest-free space.'
-        },
-        {
             id: 'skunk-raccoon',
             name: 'Skunk or raccoon sightings',
             time: '1-3 hours',
@@ -665,8 +662,20 @@ const taskData = {
             frequency: 'biweekly',
             difficulty: 'hard',
             tooltip: 'Inspect for entry points and signs of activity; block access or arrange for humane wildlife removal.'
+        },
+        {
+            id: 'spider-webs-nests',
+            name: 'Spider webs / nests',
+            time: '0.5-1 hours',
+            timeHours: 0.75,
+            cost: '$75-$150',
+            costAmount: 125,
+            frequency: 'biweekly',
+            difficulty: 'medium',
+            tooltip: 'Remove webs and nests from corners, eaves, and fixtures to maintain a clean and pest-free space.'
         }
     ]
+
 };
 
 // Bundle Configurations
@@ -686,7 +695,7 @@ const bundles = {
     'seasonal-prep': [
         'trees-pruning', 'ac-condenser', 'misters-fans',
         'fruit-trees',  'roof-inspection', 'gutters-downspouts', 
-        'chimney-flue', 'backup-generator', 'septic-sewer',
+        'chimney-flue', 'backup-generator',// 'septic-sewer',
         'fire-pit',  'outdoor-heaters',  'firewood-storage'
     ]
 };
@@ -738,7 +747,7 @@ const serviceBundles = {
         annualPrice: 1200,
         tasks: ['trees-pruning', 'ac-condenser', 'misters-fans',
         'fruit-trees',  'roof-inspection', 'gutters-downspouts', 
-        'chimney-flue', 'backup-generator', 'septic-sewer',
+        'chimney-flue', 'backup-generator',// 'septic-sewer',
         'fire-pit',  'outdoor-heaters',  'firewood-storage'],
         maxTasks: 12
     }
@@ -892,6 +901,10 @@ document.addEventListener('DOMContentLoaded', function() {
                                     <input type="radio" name="oil_change_${index}" value="1_year">
                                     1 Year+
                                 </label>
+                                <label class="toggle-option">
+                                    <input type="radio" name="oil_change_${index}" value="not-sure">
+                                    I'm not sure
+                                </label>
                             </div>
                         </div>
                         <div class="question-group">
@@ -917,6 +930,10 @@ document.addEventListener('DOMContentLoaded', function() {
                                     <input type="radio" name="tire_rotation_${index}" value="1_year">
                                     1 Year+
                                 </label>
+                                <label class="toggle-option">
+                                    <input type="radio" name="tire_rotation_${index}" value="not-sure">
+                                    I'm not sure
+                                </label>
                             </div>
                         </div>
                         <div class="question-group">
@@ -929,6 +946,10 @@ document.addEventListener('DOMContentLoaded', function() {
                                 <label class="toggle-option">
                                     <input type="radio" name="warning_lights_${index}" value="no">
                                     No
+                                </label>
+                                <label class="toggle-option">
+                                    <input type="radio" name="warning_lights_${index}" value="not-sure">
+                                    I'm not sure
                                 </label>
                             </div>
                         </div>
@@ -943,6 +964,10 @@ document.addEventListener('DOMContentLoaded', function() {
                                     <input type="radio" name="unusual_noises_${index}" value="no">
                                     No
                                 </label>
+                                <label class="toggle-option">
+                                    <input type="radio" name="unusual_noises_${index}" value="not-sure">
+                                    I'm not sure
+                                </label>
                             </div>
                         </div>
                         <div class="question-group">
@@ -956,6 +981,10 @@ document.addEventListener('DOMContentLoaded', function() {
                                     <input type="radio" name="performance_issues_${index}" value="no">
                                     No
                                 </label>
+                                <label class="toggle-option">
+                                    <input type="radio" name="performance_issues_${index}" value="not-sure">
+                                    I'm not sure
+                                </label>
                             </div>
                         </div>
                         <div class="question-group">
@@ -968,6 +997,10 @@ document.addEventListener('DOMContentLoaded', function() {
                                 <label class="toggle-option">
                                     <input type="radio" name="recent_repairs_${index}" value="no">
                                     No
+                                </label>
+                                <label class="toggle-option">
+                                    <input type="radio" name="recent_repairs_${index}" value="not-sure">
+                                    I'm not sure
                                 </label>
                             </div>
                         </div>
@@ -995,20 +1028,10 @@ document.addEventListener('DOMContentLoaded', function() {
                                     <input type="radio" name="preferred_mechanic_${index}" value="no" class="mechanic-no">
                                     No
                                 </label>
-                            </div>
-                            <div class="conditional-content mechanic-details" style="display:none;">
-                                <div class="question-group">
-                                    <label class="question-label" for="shop_name_${index}">Shop Name</label>
-                                    <input type="text" id="shop_name_${index}" name="shop_name_${index}" class="text-input" placeholder="Enter shop name">
-                                </div>
-                                <div class="question-group">
-                                    <label class="question-label" for="shop_location_${index}">Location</label>
-                                    <input type="text" id="shop_location_${index}" name="shop_location_${index}" class="text-input" placeholder="Enter location/address">
-                                </div>
-                                <div class="question-group">
-                                    <label class="question-label" for="preference_reason_${index}">Why do you prefer this auto shop?</label>
-                                    <input type="text" id="preference_reason_${index}" name="preference_reason_${index}" class="text-input" placeholder="e.g., Great service, fair prices, convenient location">
-                                </div>
+                                <label class="toggle-option">
+                                    <input type="radio" name="preferred_mechanic_${index}" value="not-sure">
+                                    I'm not sure
+                                </label>
                             </div>
                         </div>
                         <div class="question-group">
@@ -1034,6 +1057,10 @@ document.addEventListener('DOMContentLoaded', function() {
                                     <input type="radio" name="next_maintenance_${index}" value="6_months">
                                     In 6 Months
                                 </label>
+                                <label class="toggle-option">
+                                    <input type="radio" name="next_maintenance_${index}" value="not-sure">
+                                    I'm not sure
+                                </label>
                             </div>
                         </div>
                         <div class="question-group">
@@ -1046,6 +1073,10 @@ document.addEventListener('DOMContentLoaded', function() {
                                 <label class="toggle-option">
                                     <input type="radio" name="tracking_help_${index}" value="no">
                                     No
+                                </label>
+                                <label class="toggle-option">
+                                    <input type="radio" name="tracking_help_${index}" value="not-sure">
+                                    I'm not sure
                                 </label>
                             </div>
                         </div>
@@ -1878,91 +1909,113 @@ function downloadReport() {
         }
     });
     currentY += 15;
+
+    // --- Vehicle Information Section (AutoCare) ---
+    // Always start on a new page after Property & Lot Type
     doc.addPage();
     currentY = 20;
-
-    // --- Vehicle Information Section ---
-    const autoCareSection = document.getElementById('auto-care-section');
-    if (autoCareSection && autoCareSection.style.display !== 'none') {
-        if (doc.internal.pageSize.height - currentY < 120) {
-            doc.addPage();
-            currentY = 20;
-        }
-        
+    const vehicleForms = document.querySelectorAll('.vehicle-form');
+    if (vehicleForms.length > 0) {
         doc.setFontSize(16);
         doc.setFont('helvetica', 'bold');
         doc.setTextColor(50);
         doc.text('Vehicle Information', 20, currentY);
         doc.setFont('helvetica', 'normal');
         currentY += 10;
-
-        // Retrieve all AutoCare survey data
-        const make = document.getElementById('make')?.value || 'N/A';
-        const model = document.getElementById('model')?.value || 'N/A';
-        const year = document.getElementById('year')?.value || 'N/A';
-        const mileage = document.getElementById('mileage')?.value || 'N/A';
-        const mechanicUse = document.querySelector('input[name="mechanic_use"]:checked')?.value || 'N/A';
-        const mechanicName = document.getElementById('mechanic_name')?.value || 'N/A';
-        const lastService = document.getElementById('last_service')?.value || 'N/A';
-        const nextService = document.getElementById('next_service')?.value || 'N/A';
-        const additionalNotes = document.getElementById('additional_notes')?.value || 'N/A';
-
-        // Get selected services
-        const selectedServicesCheckboxes = document.querySelectorAll('input[name="services_needed"]:checked');
-        const servicesNeeded = Array.from(selectedServicesCheckboxes).map(cb => cb.value.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase())).join(', ') || 'None selected';
-
-        const vehicleInfoData = [
-            ['Vehicle', `${year} ${make} ${model}`],
-            ['Mileage', `${mileage}`],
-            ['Use Mechanic?', `${mechanicUse.charAt(0).toUpperCase() + mechanicUse.slice(1)}`],
-        ];
-
-        // Conditionally add mechanic details if "Yes" was selected
-        if (mechanicUse === 'yes') {
-            vehicleInfoData.push(['Mechanic\'s Name', mechanicName]);
-            vehicleInfoData.push(['Last Service Date', lastService]);
-            vehicleInfoData.push(['Next Recommended Service', nextService]);
-        }
-
-        vehicleInfoData.push(['Services Interested In', servicesNeeded]);
-        if (additionalNotes !== 'N/A') {
-            vehicleInfoData.push(['Additional Notes', additionalNotes]);
-        }
-
-        doc.autoTable({
-            startY: currentY,
-            head: [['Field', 'Value']],
-            body: vehicleInfoData,
-            theme: 'grid',
-            styles: {
-                font: 'helvetica',
-                fontSize: 12,
-                cellPadding: 4,
-                textColor: [50, 50, 50]
-            },
-            headStyles: {
-                fillColor: [102, 126, 234],
-                textColor: [255, 255, 255],
-                fontStyle: 'bold'
-            },
-            columnStyles: {
-                0: { fontStyle: 'bold', cellWidth: 50 },
-                1: { cellWidth: 'auto' }
-            },
-            margin: { left: 20, right: 20 },
-            didDrawPage: function(data) {
-                currentY = data.cursor.y;
+        vehicleForms.forEach((form, idx) => {
+            if (idx > 0) {
+                doc.addPage();
+                currentY = 20;
             }
+            const index = form.getAttribute('data-vehicle-index');
+            // Get values for this vehicle
+            const make = form.querySelector(`#make_${index}`)?.value || 'N/A';
+            const model = form.querySelector(`#model_${index}`)?.value || 'N/A';
+            const year = form.querySelector(`#year_${index}`)?.value || 'N/A';
+            const mileage = form.querySelector(`#mileage_${index}`)?.value || 'N/A';
+            const usageFrequency = form.querySelector(`#usage_frequency_${index}`)?.value || 'N/A';
+            const purpose = form.querySelector(`input[name="purpose_${index}"]:checked`)?.value || 'N/A';
+            // Maintenance Awareness
+            const oilChange = form.querySelector(`input[name="oil_change_${index}"]:checked`)?.value || 'N/A';
+            const tireRotation = form.querySelector(`input[name="tire_rotation_${index}"]:checked`)?.value || 'N/A';
+            const warningLights = form.querySelector(`input[name="warning_lights_${index}"]:checked`)?.value || 'N/A';
+            const unusualNoises = form.querySelector(`input[name="unusual_noises_${index}"]:checked`)?.value || 'N/A';
+            const performanceIssues = form.querySelector(`input[name="performance_issues_${index}"]:checked`)?.value || 'N/A';
+            const recentRepairs = form.querySelector(`input[name="recent_repairs_${index}"]:checked`)?.value || 'N/A';
+            // Routine Care
+            const preferredMechanic = form.querySelector(`input[name="preferred_mechanic_${index}"]:checked`)?.value || 'N/A';
+            const shopName = form.querySelector(`#shop_name_${index}`)?.value || 'N/A';
+            const shopLocation = form.querySelector(`#shop_location_${index}`)?.value || 'N/A';
+            const preferenceReason = form.querySelector(`#preference_reason_${index}`)?.value || 'N/A';
+            const nextMaintenance = form.querySelector(`input[name="next_maintenance_${index}"]:checked`)?.value || 'N/A';
+            const trackingHelp = form.querySelector(`input[name="tracking_help_${index}"]:checked`)?.value || 'N/A';
+
+            // Heading for each vehicle
+            doc.setFontSize(13);
+            doc.setFont('helvetica', 'bold');
+            doc.setTextColor(40, 167, 69);
+            doc.text(`Vehicle #${index}`, 20, currentY);
+            doc.setFont('helvetica', 'normal');
+            doc.setTextColor(50);
+            currentY += 7;
+
+            // Table for this vehicle
+            const vehicleInfoData = [
+                ['Make', make],
+                ['Model', model],
+                ['Year', year],
+                ['Mileage', mileage],
+                ['Usage Frequency', usageFrequency],
+                ['Primary Usage', purpose],
+                ['Last Oil Change', oilChange],
+                ['Tire Rotation', tireRotation],
+                ['Warning Lights', warningLights],
+                ['Unusual Noises', unusualNoises],
+                ['Performance Issues', performanceIssues],
+                ['Recent Repairs', recentRepairs],
+                ['Preferred Mechanic', preferredMechanic],
+            ];
+            if (preferredMechanic === 'yes') {
+                vehicleInfoData.push(['Shop Name', shopName]);
+                vehicleInfoData.push(['Shop Location', shopLocation]);
+                vehicleInfoData.push(['Preference Reason', preferenceReason]);
+            }
+            vehicleInfoData.push(['Next Maintenance', nextMaintenance]);
+            vehicleInfoData.push(['Tracking Help', trackingHelp]);
+
+            doc.autoTable({
+                startY: currentY,
+                head: [['Field', 'Value']],
+                body: vehicleInfoData,
+                theme: 'grid',
+                styles: {
+                    font: 'helvetica',
+                    fontSize: 12,
+                    cellPadding: 3,
+                    textColor: [50, 50, 50]
+                },
+                headStyles: {
+                    fillColor: [102, 126, 234],
+                    textColor: [255, 255, 255],
+                    fontStyle: 'bold'
+                },
+                columnStyles: {
+                    0: { fontStyle: 'bold', cellWidth: 50 },
+                    1: { cellWidth: 'auto' }
+                },
+                margin: { left: 20, right: 20 },
+                didDrawPage: function(data) {
+                    currentY = data.cursor.y;
+                }
+            });
+            currentY += 15;
         });
-        currentY += 15;
     }
 
     // --- Selected Tasks Section ---
-    if (doc.internal.pageSize.height - currentY < 20) {
-        doc.addPage();
-        addFooter(doc);
-        currentY = 20;
-    }
+    // Always start Selected Tasks on a new page
+    doc.addPage();
+    currentY = 20;
 
     doc.setFontSize(16);
     doc.setFont('helvetica', 'bold');
@@ -2209,7 +2262,7 @@ function downloadReport() {
 
     const contactInfo = [
         'Website: www.jamiez.com',
-        'Email: support@jamiez.com',
+        'Email: heyjamiez@jamiez.com',
     ];
 
     contactInfo.forEach(info => {
